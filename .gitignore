@@ -1,0 +1,54 @@
+#-------------------------------------------------------------------
+# CODEIGNITER 4 ENTORNO COMPLETO
+#-------------------------------------------------------------------
+# Ignorar las dependencias de Composer
+/vendor/
+
+# ¡CRÍTICO! Ignorar credenciales, contraseñas de BD y claves secretas
+.env
+
+# Ignorar archivos de caché de pruebas
+.phpunit.result.cache
+
+#-------------------------------------------------------------------
+# CARPETA WRITABLE (Mantener carpetas pero ignorar archivos temporales)
+#-------------------------------------------------------------------
+/writable/cache/*
+!/writable/cache/index.html
+
+/writable/debugbar/*
+
+/writable/logs/*
+!/writable/logs/index.html
+
+/writable/session/*
+!/writable/session/index.html
+
+/writable/uploads/*
+!/writable/uploads/index.html
+
+#-------------------------------------------------------------------
+# ARCHIVOS LOCALES Y RESPALDOS (Detectados en tu captura)
+#-------------------------------------------------------------------
+# Ignorar la carpeta de copia temporal
+/copia web en php/
+
+# Ignorar archivos Excel de control interno
+*.xlsx
+/COMPARATIVA MODELO WEB1 - MULTI.xlsx
+/Estructura-nueva.xlsx
+
+# Ignorar volcados/respaldos de Base de Datos SQL
+*.sql
+/gaemulti_databeland.sql
+
+# Ignorar capturas de pantalla sueltas
+/correos.PNG
+
+#-------------------------------------------------------------------
+# EDITORES DE CÓDIGO Y SISTEMA OPERATIVO
+#-------------------------------------------------------------------
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
