@@ -1,68 +1,232 @@
-
 # MULTIBELAND-CODEIGNITER4
 
 <p align="center">
-  <strong>Proyecto base desarrollado con CodeIgniter 4</strong>
+  <strong>Plataforma web corporativa y sistema de administración desarrollado con CodeIgniter 4</strong>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/PHP-7.4%20%7C%208.x-777BB4?logo=php&logoColor=white" alt="PHP">
-  <img src="https://img.shields.io/badge/CodeIgniter-4-EF4223?logo=codeigniter&logoColor=white" alt="CodeIgniter 4">
-  <img src="https://img.shields.io/badge/MySQL-MariaDB-4479A1?logo=mysql&logoColor=white" alt="MySQL">
-  <img src="https://img.shields.io/badge/Composer-Dependencies-885630?logo=composer&logoColor=white" alt="Composer">
+  <img src="assets/screenshots/inicio.png" alt="Multi Beland - Página principal" width="850">
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/PHP-Backend-blue?logo=php" alt="PHP">
+  <img src="https://img.shields.io/badge/CodeIgniter-4-red?logo=codeigniter" alt="CodeIgniter 4">
+  <img src="https://img.shields.io/badge/MySQL-Database-blue?logo=mysql" alt="MySQL">
+  <img src="https://img.shields.io/badge/Composer-Dependencies-orange?logo=composer" alt="Composer">
+  <img src="https://img.shields.io/badge/Status-Development-green" alt="Development">
 </p>
 
 ---
 
-## Descripción
+## 📌 Descripción
 
-Repositorio base de un proyecto web desarrollado utilizando el framework **CodeIgniter 4**, diseñado como punto de partida para el desarrollo, mantenimiento y personalización de aplicaciones web en PHP.
+**Multi Beland** es una plataforma web corporativa desarrollada utilizando PHP y el framework CodeIgniter 4.
 
-El proyecto utiliza la estructura estándar de CodeIgniter 4, separando la lógica de aplicación, los recursos públicos, las pruebas y los componentes del framework.
+El proyecto está orientado a presentar los servicios especializados de Multi Beland S.A.C., empresa dedicada a ofrecer soluciones relacionadas con maquinaria pesada, mantenimiento industrial, abastecimiento, logística y servicios técnicos especializados.
 
-## Tecnologías
+La plataforma integra un sitio web público y un sistema de administración que permite gestionar diferentes contenidos y configuraciones del sitio.
 
-- **PHP:** Lenguaje de programación backend.
-- **CodeIgniter 4:** Framework PHP basado en MVC.
-- **Composer:** Gestor de dependencias PHP.
-- **MySQL / MariaDB:** Sistema de gestión de bases de datos, según las necesidades de la aplicación.
-- **Apache:** Servidor web utilizado para el entorno de desarrollo local.
+El desarrollo utiliza una arquitectura basada en el framework CodeIgniter 4, separando la lógica de aplicación, las vistas, las rutas, los recursos públicos y los componentes del sistema.
 
-## Estructura del proyecto
+---
+
+## 🎯 Objetivos del proyecto
+
+- Desarrollar una plataforma web corporativa para la presentación de servicios empresariales.
+- Centralizar la administración de contenidos del sitio web.
+- Facilitar la gestión de mensajes y categorías.
+- Administrar banners y elementos visuales.
+- Gestionar configuraciones generales del sitio web.
+- Facilitar la actualización de contenidos sin modificar directamente el código fuente.
+- Mantener una estructura organizada y escalable utilizando CodeIgniter 4.
+
+---
+
+## 🚀 Características principales
+
+### 🌐 Frontend corporativo
+
+- Página principal.
+- Presentación institucional.
+- Información de misión y visión.
+- Presentación de servicios especializados.
+- Cobertura nacional.
+- Secciones informativas.
+- Formulario de contacto y cotización.
+- Navegación entre páginas.
+- Diseño adaptable a diferentes dispositivos.
+
+### ⚙️ Panel administrativo
+
+- Sistema de autenticación.
+- Dashboard administrativo.
+- Gestión de categorías.
+- Gestión de mensajes y contenidos.
+- Gestión de banners.
+- Administración de contactos.
+- Gestión del perfil de usuario.
+- Configuración general del sitio.
+- Administración del logo y favicon.
+- Configuración de redes sociales.
+- Gestión de información institucional.
+
+---
+
+## 🖥️ Capturas de pantalla
+
+### Frontend - Sitio web corporativo
+
+#### Página principal y servicios
+
+<p align="center">
+  <img src="assets/screenshots/inicio.png" alt="Página principal Multi Beland" width="100%">
+</p>
+
+#### Cobertura nacional
+
+<p align="center">
+  <img src="assets/screenshots/cobertura.png" alt="Cobertura nacional Multi Beland" width="100%">
+</p>
+
+#### Nosotros - Misión y visión
+
+<p align="center">
+  <img src="assets/screenshots/nosotros.png" alt="Nosotros Multi Beland" width="100%">
+</p>
+
+#### Pintura industrial
+
+<p align="center">
+  <img src="assets/screenshots/pintura-industrial.png" alt="Servicio de pintura industrial" width="100%">
+</p>
+
+---
+
+### Backend - Panel administrativo
+
+#### Inicio de sesión
+
+<p align="center">
+  <img src="assets/screenshots/login.png" alt="Login del panel administrativo" width="100%">
+</p>
+
+#### Gestión de mensajes
+
+<p align="center">
+  <img src="assets/screenshots/admin-mensajes.png" alt="Administración de mensajes" width="100%">
+</p>
+
+#### Dashboard administrativo
+
+<p align="center">
+  <img src="assets/screenshots/admin-dashboard.png" alt="Dashboard administrativo" width="100%">
+</p>
+
+#### Configuración general
+
+<p align="center">
+  <img src="assets/screenshots/admin-configuracion.png" alt="Configuración general del sistema" width="100%">
+</p>
+
+---
+
+## 🛠️ Tecnologías utilizadas
+
+| Tecnología | Descripción |
+|---|---|
+| PHP | Lenguaje de programación backend |
+| CodeIgniter 4 | Framework PHP |
+| MySQL / MariaDB | Sistema de gestión de base de datos |
+| Composer | Administración de dependencias PHP |
+| Apache | Servidor web |
+| HTML5 | Estructura del frontend |
+| CSS3 | Diseño y estilos |
+| JavaScript | Interactividad del frontend |
+| Bootstrap | Componentes y diseño responsive |
+| Git | Control de versiones |
+| GitHub | Repositorio de código |
+
+---
+
+## 📁 Estructura del proyecto
 
 ```text
 MULTIBELAND-CODEIGNITER4/
-├── app/                  # Aplicación: configuración, controladores, modelos y vistas
-├── public/               # Punto de entrada y recursos públicos
-├── system/               # Núcleo del framework CodeIgniter 4
-├── tests/                # Pruebas automatizadas
-├── writable/             # Caché, logs, sesiones y archivos generados
-├── .gitignore            # Archivos excluidos de Git
-├── .htaccess             # Configuración Apache
-├── composer.json          # Dependencias del proyecto
-├── composer.lock          # Versiones de dependencias
-├── preload.php            # Archivo de precarga
-├── phpunit.xml.dist       # Configuración de PHPUnit
-└── spark                 # CLI de CodeIgniter
+│
+├── app/
+│   ├── Config/
+│   ├── Controllers/
+│   ├── Models/
+│   ├── Views/
+│   └── ...
+│
+├── assets/
+│   └── screenshots/
+│       ├── inicio.png
+│       ├── cobertura.png
+│       ├── nosotros.png
+│       ├── pintura-industrial.png
+│       ├── login.png
+│       ├── admin-mensajes.png
+│       ├── admin-dashboard.png
+│       └── admin-configuracion.png
+│
+├── public/
+│   ├── index.php
+│   ├── assets/
+│   └── ...
+│
+├── system/
+├── tests/
+├── writable/
+│
+├── .gitignore
+├── .htaccess
+├── composer.json
+├── composer.lock
+├── preload.php
+├── phpunit.xml.dist
+├── README.md
+└── spark
 ```
 
-## Requisitos
+### Directorios principales
 
-Para ejecutar el proyecto en un entorno local se recomienda disponer de:
+| Directorio | Descripción |
+|---|---|
+| `app/` | Código principal de la aplicación |
+| `app/Controllers/` | Controladores de la aplicación |
+| `app/Models/` | Modelos y acceso a datos |
+| `app/Views/` | Vistas del frontend y administración |
+| `app/Config/` | Configuración del framework |
+| `public/` | Directorio público de acceso web |
+| `system/` | Núcleo del framework CodeIgniter 4 |
+| `tests/` | Pruebas de la aplicación |
+| `writable/` | Logs, caché y archivos temporales |
+| `assets/screenshots/` | Capturas de pantalla de la documentación |
+
+---
+
+## 💻 Requisitos
+
+Para ejecutar el proyecto en un entorno local se recomienda contar con:
 
 - PHP compatible con la versión de CodeIgniter 4 utilizada.
 - Apache.
+- MySQL o MariaDB.
 - Composer.
-- MySQL o MariaDB, si la aplicación requiere base de datos.
-- XAMPP para el entorno de desarrollo local en Windows.
+- Git.
+- XAMPP para el entorno de desarrollo local.
 
-Las extensiones PHP requeridas dependerán de la configuración y funcionalidades de la aplicación.
+Las extensiones PHP requeridas dependerán de la versión del framework y de las dependencias instaladas.
 
-## Instalación local
+---
+
+## ⚙️ Instalación local
 
 ### 1. Clonar el repositorio
 
-Desde una terminal, ubicarse en el directorio `htdocs` de XAMPP:
+Desde una terminal, ingresar al directorio de proyectos de XAMPP:
 
 ```bash
 cd C:\xampp\htdocs
@@ -80,6 +244,8 @@ Ingresar al proyecto:
 cd MULTIBELAND-CODEIGNITER4
 ```
 
+---
+
 ### 2. Instalar dependencias
 
 Ejecutar Composer:
@@ -88,33 +254,45 @@ Ejecutar Composer:
 composer install
 ```
 
-Este comando instala las dependencias definidas en `composer.json` y `composer.lock`.
+Este comando instalará las dependencias definidas en `composer.json` y `composer.lock`.
+
+---
 
 ### 3. Configurar el entorno
 
-Copiar el archivo de configuración de entorno de CodeIgniter:
+Copiar el archivo de configuración de entorno:
 
 ```bash
 copy env .env
 ```
 
-Si el archivo `env` no está disponible en el repositorio, utilizar la plantilla de configuración correspondiente a la versión instalada de CodeIgniter 4.
+Si el archivo `env` no se encuentra disponible en el repositorio, utilizar la plantilla de configuración correspondiente a la versión de CodeIgniter 4 instalada.
 
-Editar el archivo `.env` y configurar los parámetros necesarios para el entorno local.
+Editar el archivo `.env` y configurar los parámetros del entorno local.
 
 Ejemplo:
 
 ```ini
 CI_ENVIRONMENT = development
+```
 
+Configurar también la URL base de la aplicación según el entorno local.
+
+Ejemplo:
+
+```ini
 app.baseURL = 'http://localhost/MULTIBELAND-CODEIGNITER4/public/'
 ```
 
-La configuración de `baseURL` debe ajustarse según la configuración del servidor web y la estructura de despliegue.
+La URL deberá ajustarse según la configuración del servidor Apache.
+
+---
 
 ### 4. Configurar la base de datos
 
-Si la aplicación utiliza base de datos, configurar las credenciales en el archivo `.env`.
+Crear la base de datos correspondiente en MySQL o MariaDB.
+
+Configurar las credenciales en el archivo `.env`.
 
 Ejemplo:
 
@@ -127,19 +305,32 @@ database.default.DBDriver = MySQLi
 database.default.port = 3306
 ```
 
-Reemplazar los valores por los correspondientes al entorno local.
+Reemplazar los valores de configuración por los correspondientes al entorno local.
 
-### 5. Ejecutar el proyecto
+---
 
-Con Apache iniciado desde XAMPP, acceder a la aplicación según la configuración del entorno.
+### 5. Configurar permisos
 
-Ejemplo de acceso:
+El directorio `writable/` debe permitir que CodeIgniter pueda escribir archivos de:
+
+- Logs.
+- Caché.
+- Archivos temporales.
+- Otros recursos generados por la aplicación.
+
+En Windows utilizando XAMPP, verificar que el directorio tenga los permisos necesarios.
+
+---
+
+### 6. Ejecutar el proyecto
+
+Con Apache iniciado desde XAMPP, acceder a:
 
 ```text
 http://localhost/MULTIBELAND-CODEIGNITER4/public/
 ```
 
-También es posible utilizar el servidor de desarrollo integrado de CodeIgniter:
+También es posible utilizar el servidor de desarrollo de CodeIgniter:
 
 ```bash
 php spark serve
@@ -151,42 +342,71 @@ Por defecto, el servidor de desarrollo permite acceder mediante:
 http://localhost:8080
 ```
 
-## Comandos útiles
+---
+
+## 🧰 Comandos útiles
 
 | Comando | Descripción |
 |---|---|
 | `composer install` | Instala las dependencias |
 | `php spark serve` | Inicia el servidor de desarrollo |
-| `php spark` | Consulta los comandos disponibles de CodeIgniter |
-| `php spark routes` | Lista las rutas registradas |
-| `php spark migrate` | Ejecuta las migraciones, si están configuradas |
+| `php spark` | Consulta los comandos disponibles |
+| `php spark routes` | Consulta las rutas registradas |
+| `php spark migrate` | Ejecuta migraciones configuradas |
+| `php spark cache:clear` | Limpia la caché del framework |
 
-## Seguridad
+La disponibilidad de determinados comandos dependerá de la configuración y funcionalidades implementadas en el proyecto.
 
-El repositorio excluye archivos y elementos que no deben versionarse, incluyendo:
+---
 
-- Archivo `.env`.
-- Dependencias instaladas en `vendor/`.
-- Archivos temporales y caché.
-- Logs y archivos generados.
-- Información privada del entorno local.
+## 🔐 Seguridad
 
-Las credenciales, configuraciones privadas y datos sensibles deben mantenerse fuera del repositorio.
+El repositorio debe mantener fuera del control de versiones los archivos y configuraciones sensibles del entorno de desarrollo y producción.
 
-## Desarrollo
+Se recomienda:
 
-Este repositorio sirve como base para desarrollar y ampliar aplicaciones web utilizando CodeIgniter 4.
+- No publicar credenciales de bases de datos.
+- No publicar contraseñas.
+- Mantener el archivo `.env` fuera del repositorio.
+- No versionar logs ni archivos temporales.
+- Mantener las dependencias actualizadas.
+- Configurar correctamente los permisos del directorio `writable/`.
+- Utilizar HTTPS en entornos de producción.
+- Mantener el directorio `public/` como punto de acceso web.
+- Revisar las configuraciones de Apache y PHP para producción.
 
-Las funcionalidades, módulos, controladores, modelos, vistas y configuraciones pueden adaptarse según los requerimientos de cada proyecto.
+---
 
-## Autor
+## 🧩 Desarrollo
+
+Este proyecto utiliza CodeIgniter 4 como framework principal para el desarrollo de la aplicación web.
+
+La arquitectura permite organizar las funcionalidades mediante controladores, modelos, vistas, configuraciones y rutas.
+
+El sistema puede ampliarse mediante nuevas funcionalidades, módulos y componentes de acuerdo con las necesidades de la empresa.
+
+---
+
+## 📌 Estado del proyecto
+
+<kbd>Desarrollo y mantenimiento</kbd>
+
+El proyecto se encuentra sujeto a mejoras, actualizaciones y ampliaciones funcionales.
+
+---
+
+## 👨‍💻 Autor
 
 **Carlos Alberto Marquina Chuquihuaccha**
 
-GitHub: [@karlosystem](https://github.com/karlosystem)
+- GitHub: [@karlosystem](https://github.com/karlosystem)
 
 ---
 
 <p align="center">
-  Proyecto desarrollado con PHP y CodeIgniter 4.
+  <strong>Proyecto desarrollado con PHP y CodeIgniter 4.</strong>
+</p>
+
+<p align="center">
+  Multi Beland S.A.C.
 </p>
