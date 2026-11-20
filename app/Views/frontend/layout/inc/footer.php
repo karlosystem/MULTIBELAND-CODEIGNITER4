@@ -1,102 +1,74 @@
-<!-- footer -->
-<section class="w3l-footer-29-main">
-    <div class="footer-29 py-5">
-        <div class="container py-lg-4">
+<section class="w3l-footer-29-main custom-modern-footer">
+    <div class="footer-29 py-2">
+        <div class="container py-lg-0">
             <div class="row footer-top-29">
-                <div class="col-lg-4 col-md-6 col-sm-7 footer-list-29 footer-1 pr-lg-5">
-                    <div class="footer-logo mb-4">
-                        <a class="navbar-brand" href="/">
-                            <?= get_settings()->blog_title ?></a>
+                <div class="col-lg-3 col-md-6 footer-list-29 footer-1 pr-lg-4 mb-lg-0 mb-4">
+                    <div class="footer-logo-container mb-3">
+                        <a class="navbar-brand" href="<?= base_url('/') ?>">
+                            <img src="<?= base_url('frontend/images/logo-footer.png') ?>" class="footer-logo-large">
+                        </a>
                     </div>
-                    <p>Somos una empresa peruana dedicada a ofrecer soluciones integrales en suministro de equipos, materiales y
-                        servicios especializados para el sector industrial y de maquinaria pesada. </p>
-                    <div class="main-social-footer-29 mt-4">
-                        <a href="<?= get_social_media()->facebook_url ?>" class="facebook"><span class="fa fa-facebook"></span></a>
-                        <a href="<?= get_social_media()->youtube_url ?>" class="twitter"><span class="fa fa-youtube"></span></a>
-                        <a href="<?= get_social_media()->instagram_url ?>" class="instagram"><span class="fa fa-instagram"></span></a>
-                        <a href="<?= get_social_media()->whastapp_url ?>" class="linkedin"><span class="fa fa-phone"></span></a>
-                    </div>
+                    <p class="footer-text-description">Somos una empresa peruana dedicada a ofrecer soluciones integrales en suministro de equipos, materiales y servicios especializados para el sector industrial y de maquinaria pesada.</p>
                 </div>
-                <div class="col-lg-2 col-md-6 col-sm-5 col-6 footer-list-29 footer-2 mt-sm-0 mt-5">
-
-                    <ul>
-                        <h6 class="footer-title-29">Navegación</h6>
+                <div class="col-lg-3 col-md-6 footer-list-29 footer-2 mb-lg-0 mb-4 pl-lg-4">
+                    <h6 class="footer-title-modern">Enlaces Rápidos</h6>
+                    <ul class="footer-links-list">
+                        <li><a href="<?= base_url('/') ?>">Inicio</a></li>
                         <li><a href="<?= base_url('nosotros') ?>">Nosotros</a></li>
-                        <li><a href="<?= base_url('servicios') ?>">Servicios</a></li>
-                        <li><a href="<?= base_url('galeria') ?>">Galería de Fotos</a></li>
+                        <li><a href="<?= base_url('blog') ?>">Nuestro Blog</a></li>
                         <li><a href="<?= base_url('contact-us') ?>">Contáctenos</a></li>
-                        <li><a href="<?= base_url('preguntas') ?>">Preguntas</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-2 col-md-6 col-sm-5 col-6 footer-list-29 footer-3 mt-lg-0 mt-5">
-                    <h6 class="footer-title-29">Servicios</h6>
-                    <ul>
-                        <?php if (function_exists('get_posts_all') && get_posts_all()): ?>
-                            <?php foreach (get_posts_all() as $posts_all): ?>
-                                <li><a href="<?= base_url('arequipa/' . $posts_all->slug) ?>"><?= $posts_all->title ?></a></li>
-                            <?php endforeach ?>
-                        <?php endif; ?>
+                <div class="col-lg-3 col-md-6 footer-list-29 footer-3 mb-lg-0 mb-4">
+                    <h6 class="footer-title-modern">Servicios</h6>
+                    <ul class="footer-links-list">
+                        <li><a href="<?= base_url('pintura-industrial') ?>">Pintura Industrial</a></li>
+                        <li><a href="<?= base_url('tapiceria-industrial') ?>">Tapiceria Industrial</a></li>
+                        <li><a href="<?= base_url('soldadura-industrial') ?>">Soldadura Industrial</a></li>
+                        <li><a href="<?= base_url('vidrieria-industrial') ?>">Vidrieria Industrial</a></li>
+                        <li><a href="<?= base_url('restauracion-cabinas') ?>">Restauración de Cabinas</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-7 footer-list-29 footer-4 mt-lg-0 mt-5">
-                    <h6 class="footer-title-29">Informaci&oacute;n de Cont&aacute;cto</h6>
-                    <p>Dirección : <?= get_settings()->blog_address ?></p>
-                    <p class="mt-2">Tel&eacute;fono : <a href="tel:<?= get_settings()->blog_phone ?>"><?= get_settings()->blog_phone ?></a></p>
-                    <p class="mt-2">Email : <a href="mailto:<?= get_settings()->blog_email ?>"><?= get_settings()->blog_email ?></a></p>
+                <div class="col-lg-3 col-md-6 footer-list-29 footer-4">
+                    <h6 class="footer-title-modern">Conecta con Nosotros</h6>
+                    <ul class="footer-contact-info">
+                        <li>
+                            <span class="fa fa-phone icon-cyan-footer"></span>
+                            <a href="tel:<?= get_settings()->blog_phone ?>"><?= get_settings()->blog_phone ?></a>
+                        </li>
+                        <li>
+                            <span class="fa fa-envelope icon-cyan-footer"></span>
+                            <a href="mailto:<?= get_settings()->blog_email ?>"><?= get_settings()->blog_email ?></a>
+                        </li>
+                        <li>
+                            <span class="fa fa-map-marker icon-cyan-footer"></span>
+                            <span class="text-white-info">Lima, Perú</span>
+                        </li>
+                    </ul>
+                    <div class="footer-social-minimal mt-4">
+                        <a href="<?= get_social_media()->facebook_url ?>" target="_blank" class="facebook"><span class="fa fa-facebook"></span></a>
+                        <a href="<?= get_social_media()->youtube_url ?>" target="_blank" class="youtube"><span class="fa fa-youtube"></span></a>
+                        <a href="<?= get_social_media()->instagram_url ?>" target="_blank" class="instagram"><span class="fa fa-instagram"></span></a>
+                        <a href="<?= get_social_media()->whastapp_url ?>" target="_blank" class="whatsapp"><span class="fa fa-phone"></span></a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- copyright -->
-    <section class="w3l-copyright text-center">
+    <section class="w3l-copyright text-center py-4">
         <div class="container">
-            <p class="copy-footer-29">
-                <small>
-                    &copy; Todos los derechos reservados <script>
-                        document.write(new Date().getFullYear());
-                    </script> <?= get_settings()->blog_title ?> - <a href="https://carlos-marquina.com/" target="_blank">Carlos Marquina</a>
-                </small>
-
-            </p>
+            <p class="copy-footer-29">© <?= date('Y') ?> <?= get_settings()->blog_title ?>. Todos los derechos reservados.</p>
         </div>
-
-        <!-- move top -->
-        <button onclick="topFunction()" id="movetop" title="Go to top">
-            &#10548;
-        </button>
-        <script>
-            // When the user scrolls down 20px from the top of the document, show the button
-            window.onscroll = function() {
-                scrollFunction()
-            };
-
-            function scrollFunction() {
-                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                    document.getElementById("movetop").style.display = "block";
-                } else {
-                    document.getElementById("movetop").style.display = "none";
-                }
-            }
-
-            // When the user clicks on the button, scroll to the top of the document
-            function topFunction() {
-                document.body.scrollTop = 0;
-                document.documentElement.scrollTop = 0;
-            }
-        </script>
-        <!-- /move top -->
     </section>
-    <!-- //copyright -->
 </section>
-<!-- //footer -->
 
 <!--  javascripts file here -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+
 <script>
     $(document).ready(function(jQuery) {
-
         jQuery(".fancybox").fancybox({
             helpers: {
                 title: {
@@ -111,10 +83,8 @@
         });
 
         jQuery(".zoom").hover(function() {
-
             jQuery(this).addClass('transition');
         }, function() {
-
             jQuery(this).removeClass('transition');
         });
     });
@@ -122,9 +92,6 @@
 
 <script src="<?= base_url('frontend/js/theme-change.js') ?>"></script>
 
-<script src="<?= base_url('frontend/js/jquery-1.9.1.min.js') ?>"></script>
-
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 <!-- faq -->
 <script>
     const items = document.querySelectorAll(".accordion button");
@@ -199,7 +166,6 @@
 <!-- //script -->
 <!-- owl carousel -->
 
-
 <!-- script for customers -->
 <script>
     $(document).ready(function() {
@@ -254,6 +220,35 @@
             items: 1,
             navText: ["<span style='font-size: 48px;' class='ion-ios-arrow-back'></span>", "<span style='font-size: 48px;' class='ion-ios-arrow-forward'></span>"],
         });
+
+        $('#owl-brands').owlCarousel({
+            loop: true, // Bucle infinito
+            margin: 35, // Espacio de separación entre logos
+            autoplay: true, // Movimiento automático
+            autoplayTimeout: 2500, // Tiempo de espera entre transiciones (2.5s)
+            autoplaySpeed: 900, // Velocidad de la animación de deslizamiento
+            autoplayHoverPause: true, // Se pausa si el usuario pone el mouse encima
+            nav: false, // Oculta las flechas de navegación
+            dots: false, // Oculta los puntos de paginación
+            responsive: {
+                0: {
+                    items: 2 // 2 logos en pantallas muy pequeñas
+                },
+                480: {
+                    items: 3 // 3 logos en celulares medianos
+                },
+                768: {
+                    items: 4 // 4 logos en tablets
+                },
+                992: {
+                    items: 5 // 5 logos en laptops
+                },
+                1200: {
+                    items: 7 // Muestra los 7 logos juntos en pantallas grandes
+                }
+            }
+        });
+
     });
 </script>
 <!-- //customers owlcarousel -->
@@ -302,6 +297,16 @@
 <script src="<?= base_url('frontend/js/bootstrap.min.js') ?>"></script>
 
 <?= $this->renderSection('scripts'); ?>
+
+<!-- Botón Flotante de WhatsApp Global -->
+<a href="https://wa.me/51949766420?text=Hola,%20equipo%20de%20Multi%20Beland.%20Un%20gusto%20saludarlos.%20He%20estado%20revisando%20su%20sitio%20web%20y%20me%20interesa%20recibir%20informaci%C3%B3n%20detallada%20sobre%20su%20servicio%20de%20[Nombre%20del%20Servicio],%20as%C3%AD%20como%20las%20opciones%20de%20cotizaci%C3%B3n%20disponibles.%20Quedo%20atento%20a%20su%20respuesta.%20¡Muchas%20gracias!" 
+   class="whatsapp-float-btn" 
+   target="_blank" 
+   rel="noopener noreferrer" 
+   title="Escríbenos por WhatsApp">
+    <i class="fab fa-whatsapp whatsapp-float-icon"></i>
+</a>
+
 </body>
 
 </html>

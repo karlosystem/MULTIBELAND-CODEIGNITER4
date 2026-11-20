@@ -1,0 +1,627 @@
+/* ==========================================================================
+   PÁGINA: VIDRIERÍA INDUSTRIAL
+   ========================================================================== */
+
+/* --- HERO SECTION --- */
+.hero-vidrieria {
+    position: relative;
+    min-height: 520px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Capa de overlay con degradado */
+.hero-vidrieria::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.hero-vidrieria .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Imagen de fondo del hero (se aplica desde la vista) */
+.hero-vidrieria .hero-background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+/* Título principal */
+.hero-vidrieria .hero-title {
+    font-family: "Open-Sauce-One-ExtraBold", sans-serif !important;
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.5px;
+}
+
+/* Texto descriptivo con línea decorativa izquierda */
+.hero-vidrieria .hero-description {
+    position: relative;
+    padding-left: 20px;
+    border-left: 4px solid #00A4C5;
+    font-family: "Raleway", sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #E2E8F0;
+    max-width: 650px;
+    margin-bottom: 2rem;
+}
+
+/* Botón CTA */
+.hero-vidrieria .btn-hero-cta {
+    background-color: #00A4C5;
+    color: #ffffff;
+    font-family: "Open-Sauce-One-ExtraBold", sans-serif !important;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 14px 36px;
+    border-radius: 50px;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 164, 197, 0.4);
+}
+
+.hero-vidrieria .btn-hero-cta:hover {
+    background-color: #008ba7;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 164, 197, 0.6);
+    color: #ffffff;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 991px) {
+    .hero-vidrieria {
+        min-height: 420px;
+        padding: 60px 0;
+    }
+    
+    .hero-vidrieria .hero-title {
+        font-size: 2.4rem;
+    }
+    
+    .hero-vidrieria .hero-description {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-vidrieria {
+        min-height: 380px;
+        padding: 40px 0;
+    }
+    
+    .hero-vidrieria .hero-title {
+        font-size: 1.9rem;
+    }
+    
+    .hero-vidrieria .hero-description {
+        font-size: 0.95rem;
+        padding-left: 15px;
+    }
+    
+    .hero-vidrieria .btn-hero-cta {
+        padding: 12px 28px;
+        font-size: 0.9rem;
+    }
+}
+
+/* ==========================================================================
+   SECCIÓN: PILARES DEL SERVICIO (AISLADO Y ULTRA COMPACTO)
+   ========================================================================== */
+
+.vidrieria-pilares-section {
+    position: relative;
+    padding: 50px 0;
+    background-color: #F6FAFD;
+    overflow: hidden;
+}
+
+.vidrieria-pilares-section .vidrieria-pilares-bg-arrows {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.35;
+    z-index: 0;
+}
+
+.vidrieria-pilares-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.vidrieria-pilares-title-left {
+    font-family: "Open Sauce", sans-serif !important;
+    font-weight: 700;
+    color: var(--dark-navy, #0E2E5B);
+    font-size: 2.6rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.vidrieria-pilares-title-left span {
+    color: var(--cyan-accent, #00A4C5);
+}
+
+.vidrieria-pilares-decoration-line {
+    position: relative;
+    width: 100%;
+    max-width: 240px;
+    height: 3px;
+    background: linear-gradient(to right, var(--cyan-accent, #00A4C5), var(--dark-navy, #0E2E5B));
+    border-radius: 2px;
+}
+
+.vidrieria-pilares-decoration-line::after {
+    content: "";
+    position: absolute;
+    right: -6px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    background-color: var(--cyan-accent, #00A4C5);
+    border-radius: 50%;
+}
+
+.vidrieria-pilares-subtitle {
+    font-family: "Raleway", sans-serif;
+    color: #556987;
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 400px;
+}
+
+.vidrieria-pilares-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.vidrieria-pilar-card {
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    color: #ffffff;
+}
+
+.vidrieria-pilar-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.14);
+}
+
+/* Colores degradados corporativos específicos */
+.vidrieria-pilar-card.vidrieria-pilar-cyan {
+    background: linear-gradient(135deg, #00B4D8 0%, #0077B6 100%);
+}
+
+.vidrieria-pilar-card.vidrieria-pilar-blue {
+    background: linear-gradient(135deg, #1D4ED8 0%, #1E40AF 100%);
+}
+
+.vidrieria-pilar-card.vidrieria-pilar-navy {
+    background: linear-gradient(135deg, #0E2E5B 0%, #091C38 100%);
+}
+
+/* Cabecera con mayor padding vertical y horizontal (aspecto de botón) */
+.vidrieria-pilares-accordion .vidrieria-pilar-card .vidrieria-pilar-header {
+    display: flex !important;
+    align-items: center !important;
+    padding: 16px 22px !important; /* Aumentado para dar efecto de botón */
+    min-height: 0 !important;
+    height: auto !important;
+    cursor: pointer !important;
+    user-select: none !important;
+    transition: all 0.25s ease !important;
+}
+
+.vidrieria-pilares-accordion .vidrieria-pilar-card .vidrieria-pilar-header:hover {
+    filter: brightness(1.05); /* Sutil brillo al pasar el cursor */
+    background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Título compacto controlado */
+.vidrieria-pilares-accordion .vidrieria-pilar-card .vidrieria-pilar-header .vidrieria-pilar-card-title {
+    font-family: "Open Sauce", sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 0.95rem !important;
+    line-height: 1.2 !important;
+    color: #ffffff !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    flex-grow: 1 !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Ícono de flecha proporcional */
+.vidrieria-pilares-accordion .vidrieria-pilar-card .vidrieria-pilar-header .vidrieria-pilar-icon-toggle {
+    color: #ffffff !important;
+    opacity: 0.85 !important;
+    font-size: 0.75rem !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transition: transform 0.3s ease, opacity 0.3s ease !important;
+}
+
+.vidrieria-pilares-accordion .vidrieria-pilar-card:hover .vidrieria-pilar-header .vidrieria-pilar-icon-toggle {
+    opacity: 1 !important;
+}
+
+/* Cuerpo desplegable con espaciado acorde a las nuevas proporciones */
+.vidrieria-pilares-accordion .vidrieria-pilar-card .vidrieria-pilar-body {
+    display: none;
+    padding: 0 22px 18px 22px !important; 
+}
+
+.vidrieria-pilares-accordion .vidrieria-pilar-card .vidrieria-pilar-body .vidrieria-pilar-text {
+    font-family: "Raleway", sans-serif;
+    font-size: 0.9rem;
+    color: #F8FAFC;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.vidrieria-pilares-accordion .vidrieria-pilar-card.active .vidrieria-pilar-icon-toggle {
+    transform: rotate(180deg) !important;
+    opacity: 1 !important;
+}
+
+/* Responsive para pantallas medianas y pequeñas */
+@media (max-width: 991px) {
+    .vidrieria-pilares-section {
+        padding: 60px 0;
+    }
+    
+    .vidrieria-pilares-title-left {
+        font-size: 2.1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .vidrieria-pilares-accordion .vidrieria-pilar-card .vidrieria-pilar-header {
+        padding: 3px 10px !important;
+    }
+    
+    .vidrieria-pilares-accordion .vidrieria-pilar-card .vidrieria-pilar-header .vidrieria-pilar-card-title {
+        font-size: 0.9rem !important;
+    }
+    
+    .vidrieria-pilares-accordion .vidrieria-pilar-card .vidrieria-pilar-body {
+        padding: 0 10px 8px 10px !important;
+    }
+}
+
+/* ==========================================================================
+   ESTILOS: SLIDER DE VIDRIERÍA (OWL CAROUSEL)
+   ========================================================================== */
+
+.vidrieria-slider-section {
+    position: relative;
+    padding: 60px 0;
+    background-color: #F6FAFD;
+}
+
+.vidrieria-slide-card {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(14, 46, 91, 0.12);
+    background-color: #ffffff;
+    aspect-ratio: 16 / 9; /* Mantiene una proporción horizontal limpia y estándar */
+}
+
+.vidrieria-slide-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Personalización de Controles Owl Carousel (Flechas y Dots inferiores) */
+.vidrieria-carousel .owl-nav {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.vidrieria-carousel .owl-nav button.owl-prev,
+.vidrieria-carousel .owl-nav button.owl-next {
+    background-color: var(--cyan-accent, #00A4C5) !important;
+    color: #ffffff !important;
+    width: 38px;
+    height: 38px;
+    border-radius: 50% !important;
+    font-size: 0.9rem !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 164, 197, 0.3);
+}
+
+.vidrieria-carousel .owl-nav button.owl-prev:hover,
+.vidrieria-carousel .owl-nav button.owl-next:hover {
+    background-color: var(--dark-navy, #0E2E5B) !important;
+    box-shadow: 0 4px 12px rgba(14, 46, 91, 0.3);
+}
+
+.vidrieria-carousel .owl-dots {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+}
+
+.vidrieria-carousel .owl-dots .owl-dot span {
+    background: #cbd5e1;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin: 0;
+    transition: all 0.3s ease;
+}
+
+.vidrieria-carousel .owl-dots .owl-dot.active span {
+    background: var(--cyan-accent, #00A4C5);
+    width: 22px;
+    border-radius: 4px;
+}
+
+/* ==========================================================================
+   SECCIÓN: ESTANDARIZACIÓN OPERATIVA (CORRECCIÓN DE SOLAPE Y FLUJO)
+   ========================================================================== */
+
+.estandarizacion-section {
+    position: relative;
+    padding: 30px 0 70px 0;
+    background-color: #F6FAFD;
+    overflow: hidden;
+}
+
+/* Caja Izquierda Cyan con esquinas redondeadas completas y forma fluida */
+.estandarizacion-left-box {
+    background: linear-gradient(135deg, #00B4D8 0%, #00829B 100%);
+    border-radius: 0 30px 30px 0;
+    padding: 55px 45px;
+    color: #ffffff;
+    box-shadow: 0 10px 30px rgba(0, 164, 197, 0.2);
+    position: relative;
+    z-index: 2; /* Se ubica por encima para el solape */
+}
+
+@media (max-width: 991px) {
+    .estandarizacion-left-box {
+        border-radius: 20px;
+        padding: 40px 25px;
+    }
+}
+
+.estandarizacion-title {
+    font-family: "Open Sauce", sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    line-height: 1.2;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.estandarizacion-desc {
+    font-family: "Raleway", sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #F8FAFC;
+    margin: 0;
+}
+
+/* Contenedor de Tarjetas Derecha con solape en pantallas grandes */
+.estandarizacion-cards-wrapper {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    padding: 20px 10px 30px 10px;
+    margin-left: -50px; /* Clave: Invade ligeramente el bloque cian para lograr el solape de la tarjeta */
+    z-index: 3;
+    position: relative;
+}
+
+/* Ocultar barra de desplazamiento fea pero permitir scroll suave */
+.estandarizacion-cards-wrapper::-webkit-scrollbar {
+    height: 6px;
+}
+
+.estandarizacion-cards-wrapper::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
+
+/* Tarjetas Individuales */
+.estandarizacion-card {
+    flex: 0 0 230px; /* Ancho fijo para mantener la proporción idéntica al boceto */
+    background: linear-gradient(135deg, #1D4ED8 0%, #1E40AF 100%);
+    border-radius: 24px;
+    padding: 40px 30px;
+    color: #ffffff;
+    box-shadow: 0 12px 35px rgba(14, 46, 91, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.estandarizacion-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 40px rgba(14, 46, 91, 0.3);
+}
+
+.estandarizacion-card-title {
+    font-family: "Open Sauce", sans-serif;
+    font-weight: 700;
+    font-size: 1.35rem;
+    line-height: 1.3;
+    color: #ffffff;
+    margin-bottom: 18px;
+}
+
+.estandarizacion-card-text {
+    font-family: "Raleway", sans-serif;
+    font-size: 0.98rem;
+    line-height: 1.6;
+    color: #E2E8F0;
+    margin: 0;
+}
+
+/* Responsive para dispositivos móviles y tablets */
+@media (max-width: 991px) {
+    .estandarizacion-cards-wrapper {
+        margin-left: 0; /* Se anula el margen negativo en pantallas medianas/pequeñas */
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .estandarizacion-cards-wrapper {
+        flex-direction: column;
+    }
+    
+    .estandarizacion-card {
+        flex: 100%;
+        width: 100%;
+    }
+}
+
+/* ==========================================================================
+   SECCIÓN: SECTORES ATENDIDOS
+   ========================================================================== */
+
+.sectores-atendidos-section {
+    position: relative;
+    padding: 70px 0;
+    background-color: #F6FAFD;
+    overflow: hidden;
+}
+
+/* Estilo de las tarjetas de imagen del carrusel */
+.sectores-slide-card {
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 12px 35px rgba(14, 46, 91, 0.12);
+    background-color: #ffffff;
+    aspect-ratio: 4 / 3; /* Proporción vertical similar al boceto */
+}
+
+.sectores-slide-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Contenido de la derecha */
+.sectores-content-wrapper {
+    padding-left: 20px;
+}
+
+@media (max-width: 991px) {
+    .sectores-content-wrapper {
+        padding-left: 0;
+        margin-top: 30px;
+    }
+}
+
+.sectores-main-title {
+    font-family: "Open Sauce", sans-serif;
+    font-weight: 700;
+    font-size: 2.3rem;
+    color: var(--dark-navy, #0E2E5B);
+    margin-bottom: 25px;
+}
+
+/* Grid de Tarjetas de Texto */
+.sectores-cards-grid {
+    display: flex;
+    gap: 20px;
+}
+
+.sector-card {
+    flex: 1;
+    background: linear-gradient(135deg, #1D4ED8 0%, #1E40AF 100%);
+    border-radius: 24px;
+    padding: 35px 25px;
+    color: #ffffff;
+    box-shadow: 0 10px 25px rgba(14, 46, 91, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sector-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(14, 46, 91, 0.25);
+}
+
+.sector-card-title {
+    font-family: "Open Sauce", sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.sector-card-text {
+    font-family: "Raleway", sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #E2E8F0;
+    margin: 0;
+}
+
+/* Personalización de Controles del Carrusel (Flechas a un lado o abajo según prefieras) */
+.sectores-carousel .owl-nav {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.sectores-carousel .owl-nav button.owl-prev,
+.sectores-carousel .owl-nav button.owl-next {
+    background-color: var(--cyan-accent, #00A4C5) !important;
+    color: #ffffff !important;
+    width: 38px;
+    height: 38px;
+    border-radius: 50% !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 164, 197, 0.3);
+}
+
+.sectores-carousel .owl-nav button.owl-prev:hover,
+.sectores-carousel .owl-nav button.owl-next:hover {
+    background-color: var(--dark-navy, #0E2E5B) !important;
+}
+
+/* Responsive para dispositivos móviles */
+@media (max-width: 768px) {
+    .sectores-cards-grid {
+        flex-direction: column;
+    }
+}

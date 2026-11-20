@@ -1,0 +1,385 @@
+/* ==========================================================================
+   ARCHIVO: cobertura.css - VERSIÓN FINAL SOLUCIONADA (RESPETA EL MENU BLANCO)
+   ========================================================================== */
+
+/* --- 1. HERO BANNER DE COBERTURA (POSICIONADO NATURALMENTE) --- */
+.cobertura-hero {
+    background-image: url('../images/cobertura/banner_cobertura_multibeland.png');
+    background-size: cover;
+    background-position: right center; /* Asegura que la maquinaria y los operarios se vean perfectos */
+    background-repeat: no-repeat;
+    min-height: 400px; /* Altura ideal estándar */
+    width: 100%;
+    margin-top: 0 !important; /* Eliminamos cualquier margen negativo para no tapar el header */
+    padding-top: 80px; /* Separación interna elegante para el contenido */
+    padding-bottom: 80px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* Forzar que el contenido del banner esté siempre encima del fondo */
+.cobertura-hero .container.z-index-top {
+    position: relative;
+    z-index: 10 !important;
+}
+
+/* --- TEXTOS DEL BANNER EN EL ÁREA AZUL --- */
+.cobertura-main-title {
+    font-family: 'OpenOpen-Sauce-One-ExtraBold', sans-serif !important;
+    font-size: 3.5rem;
+    color: #ffffff !important; /* Blanco absoluto sobre el fondo azul oscuro */
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 1.2rem;
+    letter-spacing: -1px;
+}
+
+.cobertura-subtitle {
+    font-size: 1.15rem;
+    color: #e2e8f0 !important; /* Plateado claro para máxima legibilidad */
+    line-height: 1.6;
+    font-weight: 500;
+    max-width: 680px;
+}
+
+/* --- 2. CONTENIDO PRINCIPAL --- */
+.cobertura-main-content {
+    background-color: #ffffff;
+    z-index: 2;
+    position: relative;
+}
+
+/* --- BOTONES DE SEDES FLOTANTES (SUPERPUESTOS AL BORDE DEL BANNER) --- */
+.sede-buttons-container {
+    margin-top: -45px; /* Hace que floten sobre el límite del banner sin romper nada */
+    position: relative;
+    z-index: 20;
+    gap: 30px !important; /* Aplica la separación de 30px en desktop y móviles automáticamente */
+}
+
+.btn-sede-card {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 50px; /* Bordes totalmente redondeados estilo píldora */
+    padding: 18px 45px;
+    min-width: 330px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    cursor: pointer;
+}
+
+/* Botón de Lima (Estilo Cyan) */
+.btn-sede-card[data-sede="lima"] {
+    border: 1.5px solid rgba(0, 164, 197, 0.1);
+    box-shadow: 0 15px 35px rgba(0, 164, 197, 0.12);
+}
+.btn-sede-card[data-sede="lima"] .btn-title {
+    font-family: 'OpenOpen-Sauce-One-ExtraBold', sans-serif !important;
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: #00a4c5;
+    margin-bottom: 2px;
+}
+.btn-sede-card[data-sede="lima"] .btn-subtitle {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #00a4c5;
+}
+
+/* Botón de Arequipa (Estilo Azul Oscuro) */
+.btn-sede-card[data-sede="arequipa"] {
+    border: 1.5px solid rgba(14, 46, 91, 0.1);
+    box-shadow: 0 15px 35px rgba(14, 46, 91, 0.12);
+}
+.btn-sede-card[data-sede="arequipa"] .btn-title {
+    font-family: 'OpenOpen-Sauce-One-ExtraBold', sans-serif !important;
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: #0e2e5b;
+    margin-bottom: 2px;
+}
+.btn-sede-card[data-sede="arequipa"] .btn-subtitle {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #0e2e5b;
+}
+
+/* Efectos Hover */
+.btn-sede-card:hover {
+    transform: translateY(-5px);
+}
+.btn-sede-card[data-sede="lima"]:hover {
+    box-shadow: 0 20px 40px rgba(0, 164, 197, 0.22);
+    border-color: rgba(0, 164, 197, 0.3);
+}
+.btn-sede-card[data-sede="arequipa"]:hover {
+    box-shadow: 0 20px 40px rgba(14, 46, 91, 0.22);
+    border-color: rgba(14, 46, 91, 0.3);
+}
+
+/* Escalamiento cuando el botón está activo */
+.btn-sede-card.active {
+    transform: scale(1.02);
+}
+
+
+/* --- MAPA INTERACTIVO Y TOOLTIPS --- */
+.map-interactive-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    /* Desplaza el mapa hacia la derecha en desktop para alinear la costa con tu guía roja */
+    transform: translateX(110px); 
+}
+
+.map-image {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 15px 35px rgba(14, 46, 91, 0.06));
+}
+
+.map-tooltip {
+    position: absolute;
+    background-color: #ffffff;
+    border-radius: 18px;
+    padding: 12px 15px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    box-shadow: 0 15px 30px rgba(14, 46, 91, 0.1);
+    border: 1px solid rgba(14, 46, 91, 0.04);
+    z-index: 5;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    width: 230px; /* Ancho exacto y compacto del mockup */
+}
+
+/* Cambia el círculo del icono para que sea azul oscuro y el SVG blanco como el boceto */
+/* Círculo del icono azul oscuro con SVG blanco */
+.tooltip-icon {
+    width: 44px;
+    height: 44px;
+    background-color: #0e2e5b;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.tooltip-desc {
+    font-size: 0.82rem;
+    color: #00509d; /* Color azul para los textos descriptivos */
+    font-weight: 500;
+    margin-top: 2px;
+    line-height: 1.25; /* Espaciado cómodo para el salto de línea */
+    /* Se eliminó white-space: nowrap; para permitir el salto de línea */
+}
+
+.map-tooltip.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.tooltip-content {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.tooltip-title {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #0e2e5b;
+    letter-spacing: 0.5px;
+    line-height: 1.1;
+}
+
+.tooltip-desc {
+    font-size: 0.82rem;
+    color: #00509d;
+    font-weight: 500;
+    margin-top: 2px;
+    line-height: 1.25;
+}
+
+/* Posicionamiento en porcentajes */
+.tooltip-lima {
+    top: 36%;
+    /* Lo empujamos hacia la izquierda aprovechando el nuevo espacio creado */
+    left: -200px; 
+}
+
+.tooltip-arequipa {
+   top: 68%;
+    left: -120px;
+}
+
+
+/* --- TARJETAS INFERIORES DE VALOR --- */
+/* --- TARJETAS INFERIORES DE VALOR --- */
+.cobertura-card {
+    background-color: #ffffff;
+    border-radius: 28px;
+    padding: 2.2rem 2rem;
+    border: 1px solid rgba(14, 46, 91, 0.05);
+    box-shadow: 0 15px 35px rgba(14, 46, 91, 0.05);
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Control exacto de la separación vertical entre cabecera e inicio de texto */
+.cobertura-card-header {
+    margin-bottom: 12px !important; 
+}
+
+.cobertura-card-title {
+    font-family: 'OpenOpen-Sauce-One-ExtraBold', sans-serif !important;
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #0e2e5b;
+    line-height: 1.25;
+    margin: 0;
+}
+
+.cobertura-card-icon {
+    width: 68px; /* Icono más grande y visible como en el boceto */
+    height: 68px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.cobertura-card-text {
+    font-family: 'OpenOpen-Sauce-One-ExtraBold', sans-serif !important; /* Tipografía consistente */
+    font-weight: 500; /* Peso medio para que no sea ultra grueso pero mantenga la familia */
+    font-size: 0.95rem;
+    color: #00509d; /* Azul medio corporativo del boceto (adiós al plomo) */
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Efecto hover premium */
+.cobertura-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 22px 45px rgba(14, 46, 91, 0.1);
+    border-color: rgba(0, 164, 197, 0.2); /* Destello sutil en cyan de tu marca */
+}
+
+
+/* ==========================================================================
+   MEDIA QUERIES (RESPONSIVIDAD INTEGRADA)
+   ========================================================================== */
+
+@media (max-width: 991px) {
+    .cobertura-hero {
+        padding-top: 60px;
+        padding-bottom: 60px;
+        min-height: 350px;
+        background-position: 75% center;
+    }
+    .cobertura-main-title {
+        font-size: 2.8rem;
+    }
+    .cobertura-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .map-interactive-container {
+        transform: none;
+    }
+    
+    /* Ajuste de Badges dentro del lienzo seguro en Tablets */
+    .tooltip-lima {
+        left: -15px;
+        top: 36%;
+    }
+    .tooltip-arequipa {
+        left: -15px;
+        top: 68%;
+    }
+}
+
+@media (max-width: 767px) {
+    .cobertura-hero {
+        min-height: 300px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        background-position: 80% center;
+    }
+    .cobertura-hero .text-start {
+        text-align: center !important;
+    }
+    .cobertura-main-title {
+        font-size: 2.2rem;
+    }
+    .cobertura-subtitle {
+        font-size: 1rem;
+        margin: 0 auto;
+    }
+    .sede-buttons-container {
+        margin-top: -45px;
+        position: relative;
+        z-index: 20;
+    }
+
+    .sede-buttons-container .btn-sede-card {
+        margin: 10px;
+    }
+
+    .btn-sede-card {
+        width: 100%;
+        min-width: 100%;
+        padding: 14px 28px;
+    }
+    
+    .map-tooltip {
+        padding: 10px 14px;
+    }
+
+   .map-interactive-container {
+        transform: none;
+    }
+
+    /* Ajuste de Badges dentro del lienzo seguro en Celulares */
+    .tooltip-lima {
+        left: 5px;
+        top: 38%;
+    }
+    .tooltip-arequipa {
+        left: 5px;
+        top: 68%;
+    }
+}
+
+/* ==========================================================================
+   ANIMACIÓN EXCLUSIVA PARA EL INTERCAMBIO DE MAPAS (CERO IMPACTO EN BOTONES)
+   ========================================================================== */
+#mapaCobertura {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: opacity, transform;
+}
+
+/* Estado de transición intermedio (Efecto cinema cuando cambia de Sede) */
+#mapaCobertura.map-transitioning {
+    opacity: 0;
+    transform: scale(0.97); /* Micro-escala hacia adentro muy elegante */
+}
+
+.sede-cards-group {
+    opacity: 1;
+    transition: opacity 0.35s ease-in-out;
+}

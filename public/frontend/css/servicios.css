@@ -1,0 +1,907 @@
+/* 1. Texto Base: Raleway (Google Fonts) */
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap");
+
+@font-face {
+  font-family: "Open Sauce";
+  /* Asegúrate de ajustar la ruta '../fonts/' según dónde guardes los archivos */
+  src:
+    url("../fonts/OpenSauceOne-SemiBold.woff") format("woff2"),
+    url("../fonts/OpenSauceOne-SemiBold.woff") format("woff");
+  font-weight: bold;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Open-Sauce-One-ExtraBold";
+  src:
+    url("../fonts/OpenSauceOne-ExtraBold.woff") format("woff"),
+    url("Open-Sauce-One-ExtraBold.ttf.svg#Open-Sauce-One-ExtraBold")
+      format("svg"),
+    url("Open-Sauce-One-ExtraBold.ttf.eot"),
+    url("Open-Sauce-One-ExtraBold.eot?#iefix") format("embedded-opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.servicio-hero-section {
+  position: relative;
+  min-height: 550px;
+  display: flex;
+  align-items: center;
+  background-size: cover !important;
+  background-position: center right !important;
+  background-repeat: no-repeat;
+}
+
+/* Título principal del hero */
+.servicio-hero-title {
+  font-family: "Open-Sauce-One-ExtraBold", sans-serif !important;
+  font-size: 2.5rem !important;
+  line-height: 1.2 !important;
+  font-weight: 700 !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  letter-spacing: -0.5px;
+}
+
+/* Contenedor del subtítulo con borde lateral */
+.servicio-hero-subtitle-wrapper {
+  border-left: 4px solid #ffffff;
+  padding-left: 20px;
+  max-width: 650px;
+}
+
+/* Texto del subtítulo */
+.servicio-hero-subtitle {
+  font-family: "Open Sauce", sans-serif !important;
+  font-size: 1.15rem !important;
+  line-height: 1.6 !important;
+  font-weight: 400 !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  opacity: 0.95;
+}
+
+/* Botón de cotización */
+.btn-servicio-cotizar {
+  display: inline-flex;
+  align-items: center;
+  background-color: #00a4c5 !important;
+  color: #ffffff !important;
+  padding: 14px 32px !important;
+  border-radius: 50px !important;
+  font-family: "Open Sauce", sans-serif !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 15px rgba(0, 164, 197, 0.4);
+  border: 2px solid #00a4c5 !important;
+}
+
+.btn-servicio-cotizar:hover {
+  background-color: transparent !important;
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 164, 197, 0.5);
+}
+
+.btn-servicio-cotizar .fa {
+  transition: transform 0.3s ease;
+}
+
+.btn-servicio-cotizar:hover .fa {
+  transform: translateX(5px);
+}
+
+/* ==========================================================================
+2. RESPONSIVE - HERO SECTION
+========================================================================== */
+@media (max-width: 991px) {
+  .servicio-hero-section {
+    min-height: 450px;
+    background-position: center center !important;
+  }
+
+  .servicio-hero-title {
+    font-size: 2.2rem !important;
+  }
+
+  .servicio-hero-subtitle {
+    font-size: 1rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .servicio-hero-section {
+    min-height: 400px;
+    padding: 60px 0;
+  }
+
+  .servicio-hero-title {
+    font-size: 1.8rem !important;
+  }
+
+  .servicio-hero-subtitle-wrapper {
+    padding-left: 15px;
+    border-left-width: 3px;
+  }
+
+  .servicio-hero-subtitle {
+    font-size: 0.95rem !important;
+  }
+
+  .btn-servicio-cotizar {
+    padding: 12px 24px !important;
+    font-size: 0.9rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .servicio-hero-section {
+    min-height: 350px;
+  }
+
+  .servicio-hero-title {
+    font-size: 1.5rem !important;
+  }
+
+  .servicio-hero-subtitle-wrapper {
+    margin-bottom: 25px !important;
+  }
+}
+
+
+/* ==========================================================================
+PÁGINA: PINTURA INDUSTRIAL - SECCIÓN INGENIERÍA DE SUPERFICIES
+Multi Beland S.A.C.
+========================================================================== */
+
+/* Patrón decorativo de puntos - Esquina superior izquierda */
+.dot-pattern-ingenieria {
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  width: 350px;
+  height: 400px;
+  background-image: radial-gradient(circle, #00a4c5 2px, transparent 2px);
+  background-size: 18px 18px;
+  opacity: 0.25;
+  pointer-events: none;
+  z-index: 1;
+  /* Máscara para desvanecer hacia la derecha */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.3) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.3) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+/* Título principal con texto cyan y azul */
+.pintura-title-principal {
+  font-size: 2.8rem;
+  line-height: 1.15;
+}
+
+.proceso-badge {
+  background-color: #ffffff;
+  border: 3px solid #b6c6dd;
+  border-radius: 18px;
+  padding: 0 !important;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(14, 46, 91, 0.05);
+}
+
+.proceso-badge:hover {
+  border-color: #00a4c5;
+  box-shadow: 0 8px 20px rgba(0, 164, 197, 0.15);
+  transform: translateX(5px);
+}
+
+/* Layout interno de dos columnas */
+.proceso-badge-content {
+  display: grid;
+  grid-template-columns: 1.2fr 1.8fr;
+  gap: 20px;
+  padding: 24px 28px;
+  align-items: start;
+}
+
+.proceso-badge-title {
+  font-family: "OpenOpen-Sauce-One-ExtraBold", sans-serif !important;
+  font-size: 1.5rem;
+  color: var(--color-tercero);
+  margin-bottom: 0;
+  line-height: 1.3;
+}
+
+.proceso-badge-text {
+  font-size: 1.20rem;
+  line-height: 1.5;
+  color: var(--color-tercero);
+}
+
+/* Subtítulo de sección */
+.pintura-subtitle-section {
+  font-size: 1.8rem;
+  letter-spacing: -0.5px;
+}
+
+/* Ítems de Maquinaria */
+.maquinaria-item {
+  transition: all 0.3s ease;
+}
+
+
+.maquinaria-tipo {
+  font-family: "OpenOpen-Sauce-One-ExtraBold", sans-serif !important;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.maquinaria-descripcion {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #64748b;
+}
+
+.maquinaria-icono-wrapper {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 3px solid #00A4C5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #ffffff;
+    box-shadow: 0 8px 20px rgba(0, 164, 197, 0.2);
+    transition: all 0.3s ease;
+}
+
+.maquinaria-icono-wrapper:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(0, 164, 197, 0.3);
+}
+
+.maquinaria-icono-img {
+    max-width: 88%;
+    height: auto;
+    object-fit: contain;
+}
+
+.maquinaria-icono-svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.08));
+  transition: transform 0.3s ease;
+}
+
+.maquinaria-icono-wrapper:hover .maquinaria-icono-svg {
+  transform: scale(1.05);
+}
+
+.pintura-proceso-badges {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ==========================================================================
+RESPONSIVE
+========================================================================== */
+@media (max-width: 991px) {
+  .dot-pattern-ingenieria {
+    width: 250px;
+    height: 300px;
+  }
+
+  .pintura-title-principal {
+    font-size: 2.2rem;
+  }
+
+  .maquinaria-numero {
+    font-size: 2.8rem;
+  }
+
+  .maquinaria-icono-wrapper {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+@media (max-width: 767px) {
+  .dot-pattern-ingenieria {
+    width: 180px;
+    height: 220px;
+  }
+
+  .pintura-title-principal {
+    font-size: 1.8rem;
+  }
+
+  .pintura-subtitle-section {
+    font-size: 1.5rem;
+  }
+
+  .maquinaria-numero {
+    font-size: 2.2rem;
+  }
+
+  .maquinaria-tipo {
+    font-size: 1.1rem;
+  }
+
+  .maquinaria-icono-wrapper {
+    width: 150px;
+    height: 150px;
+  }
+
+  .proceso-badge {
+    background-color: #ffffff;
+    border: 2px solid #b6c6dd;
+    border-radius: 18px;
+    padding: 0 !important;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(14, 46, 91, 0.05);
+  }
+
+  .proceso-badge-title {
+    font-size: 1rem !important;
+  }
+
+  .proceso-badge-text {
+    font-size: 0.9rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .pintura-title-principal {
+    font-size: 1.5rem;
+  }
+
+  .maquinaria-numero {
+    font-size: 1.8rem;
+  }
+
+  .maquinaria-icono-wrapper {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+
+/* ==========================================================================
+PÁGINA: PINTURA INDUSTRIAL - SECCIÓN TIPOS DE MAQUINARIA
+Multi Beland S.A.C.
+========================================================================== */
+
+/* Patrón decorativo de puntos - Esquina superior izquierda */
+.dot-pattern-maquinaria {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 350px;
+    height: 400px;
+    background-image: radial-gradient(circle, #00A4C5 2px, transparent 2px);
+    background-size: 18px 18px;
+    opacity: 0.25;
+    pointer-events: none;
+    z-index: 1;
+    /* Máscara para desvanecer hacia la derecha */
+    -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0) 100%);
+    mask-image: linear-gradient(to right, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0) 100%);
+}
+
+/* Título de la sección */
+.maquinaria-title {
+    font-size: 2.2rem;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    color: var(--color-tercero);
+}
+
+/* Columna del Número Gigante */
+.maquinaria-numero-col {
+    flex: 0 0 auto; /* Evita que se encoja o se deforme */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Contenedor principal de cada item - MÁS COMPACTO */
+.maquinaria-item-container {
+   max-width: 950px;
+    margin: 0 auto;
+}
+
+.maquinaria-numero {
+    font-family: 'Open-Sauce-One-ExtraBold', sans-serif;
+    font-size: 4.2rem;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--color-primero);
+    letter-spacing: -2px;
+    display: block;
+    margin: 0;
+}
+
+/* Columna del Bloque de Texto */
+.maquinaria-text-col {
+    max-width: 380px; /* Evita que el texto se estire e invada el número */
+    flex: 1;
+    margin-left: 20px;
+}
+
+.maquinaria-tipo {
+    font-family: 'Open-Sauce-One-ExtraBold', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #2b73a1;
+    margin-bottom: 0.5rem;
+}
+
+.maquinaria-descripcion {
+    font-size: 1.05rem;
+    line-height: 1.5;
+    color: #2b73a1;
+    text-align: left;
+}
+
+/* Wrapper del contenido (número + título + descripción) */
+.maquinaria-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alineado a la izquierda */
+}
+
+.maquinaria-header {
+    display: flex;
+    align-items: baseline; /* Alinea número y título en la base */
+    margin-bottom: 0.5rem;
+}
+
+/* Wrapper Circular de la Imagen */
+.maquinaria-icono-wrapper {
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    box-shadow: 0 8px 20px rgba(0, 164, 197, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.maquinaria-icono-svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.08));
+    transition: transform 0.3s ease;
+}
+
+.maquinaria-icono-wrapper:hover .maquinaria-icono-svg {
+    transform: scale(1.05);
+}
+
+
+/* ==========================================================================
+RESPONSIVE
+========================================================================== */
+@media (max-width: 991px) {
+    .maquinaria-numero {
+        font-size: 4.2rem;
+    }
+    .maquinaria-icono-wrapper {
+        width: 190px;
+        height: 190px;
+    }
+}
+
+@media (max-width: 767px) {
+    .dot-pattern-maquinaria {
+        width: 180px;
+        height: 220px;
+    }
+    
+    .maquinaria-title {
+        font-size: 1.8rem;
+    }
+    
+    .maquinaria-numero {
+        font-size: 2.2rem;
+    }
+    
+    .maquinaria-tipo {
+        font-size: 1.1rem;
+    }
+    
+    .maquinaria-icono-wrapper {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 576px) {
+    .maquinaria-numero {
+        font-size: 3.2rem;
+    }
+    .maquinaria-tipo {
+        font-size: 1.2rem;
+    }
+    .maquinaria-descripcion {
+        font-size: 0.95rem;
+    }
+    .maquinaria-icono-wrapper {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+/* ==========================================================================
+PÁGINA: PINTURA INDUSTRIAL - SECCIÓN NUESTRO PROCESO (BOCETO EXACTO)
+========================================================================== */
+
+.proceso-section {
+    background-color: #F6FAFD;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Banner Cyan Ampliado */
+.proceso-banner-cyan {
+    background: #00A4C5;
+    border-radius: 0 180px 180px 0;
+    padding: 70px 130px 70px 60px; /* Padding derecho amplio para dar espacio al solapamiento */
+    min-height: 410px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    box-shadow: 0 10px 30px rgba(0, 164, 197, 0.2);
+    position: relative;
+    z-index: 1;
+}
+
+.proceso-banner-title {
+    font-family: 'Open-Sauce-One-ExtraBold', sans-serif !important;
+    font-size: 2.3rem;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.25;
+    letter-spacing: -0.5px;
+    text-align: left;
+    margin: 0;
+}
+
+/* Estilo base de CADA tarjeta */
+.proceso-card {
+    background-color: #275DA3;
+    border-radius: 35px;
+    padding: 35px 26px;
+    color: #ffffff;
+    box-shadow: 0 12px 30px rgba(39, 93, 163, 0.22);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    z-index: 10;
+}
+
+/* Solapamiento PROFUNDO de la primera tarjeta sobre la curva cyan */
+.proceso-card.proceso-card-overlap {
+    margin-left: -100px;
+    position: relative;
+    z-index: 15;
+}
+
+.proceso-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 40px rgba(39, 93, 163, 0.35);
+}
+
+.proceso-card-title {
+    font-family: 'Open-Sauce-One-ExtraBold', sans-serif !important;
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 1.2rem;
+    line-height: 1.3;
+}
+
+.proceso-card-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.95);
+    margin: 0;
+    font-weight: 400;
+}
+
+/* ==========================================================================
+RESPONSIVE
+========================================================================== */
+@media (max-width: 1399px) {
+    .proceso-banner-cyan {
+        padding-right: 100px;
+        border-radius: 0 140px 140px 0;
+    }
+    .proceso-card.proceso-card-overlap {
+        margin-left: -90px;
+    }
+}
+
+@media (max-width: 1199px) {
+    .proceso-banner-title {
+        font-size: 1.8rem;
+    }
+    
+    .proceso-banner-cyan {
+        border-radius: 0 100px 100px 0;
+        min-height: 360px;
+        padding: 45px 80px 45px 35px;
+    }
+
+    .proceso-card.proceso-card-overlap {
+        margin-left: -70px;
+    }
+}
+
+@media (max-width: 991px) {
+    .proceso-banner-cyan {
+        border-radius: 0 60px 60px 0;
+        min-height: auto;
+        padding: 35px 25px;
+    }
+    
+    .proceso-banner-title {
+        font-size: 1.7rem;
+    }
+    
+    /* En tablet y móviles quitamos el solapamiento */
+    .proceso-card.proceso-card-overlap {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .proceso-banner-cyan {
+        border-radius: 0 40px 40px 0;
+        padding: 25px 20px;
+    }
+    
+    .proceso-banner-title {
+        font-size: 1.4rem;
+    }
+    
+    .proceso-card {
+        padding: 25px 20px;
+        border-radius: 25px;
+    }
+}
+
+/* ==========================================================================
+PÁGINA: PINTURA INDUSTRIAL - SECCIÓN POR QUÉ CONFIAR
+========================================================================== */
+
+.confianza-section {
+    background-color: #F6FAFD;
+    position: relative;
+}
+
+/* Corrección de separación vertical y horizontal entre tarjetas */
+.confianza-section .row {
+    --bs-gutter-y: 2.2rem !important; /* Separación vertical */
+    --bs-gutter-x: 1.8rem !important; /* Separación horizontal */
+}
+
+/* Título de la izquierda */
+.confianza-title {
+    font-family: 'Open-Sauce-One-ExtraBold', sans-serif !important;
+    font-size: 2.3rem;
+    font-weight: 800;
+    color: #1B5288;
+    line-height: 1.25;
+    letter-spacing: -0.5px;
+    margin: 0;
+}
+
+/* Corrección de espacio vertical entre la fila superior e inferior de badges */
+.confianza-section .row.gy-4 {
+    --bs-gutter-y: 1.8rem; /* Separa verticalmente las tarjetas */
+}
+
+/* Contenedor de Flechas Vectoriales de Fondo */
+.confianza-arrows-bg {
+    position: absolute;
+    top: -40px;
+    right: -95px;
+    width: 600px;
+    height: 500px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.confianza-arrows-bg svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+/* Tarjetas / Badges Azules Claros */
+.confianza-card {
+    background-color: #A3B8D7;
+    border-radius: 28px;
+    padding: 34px 26px;
+    box-shadow: 0 10px 25px rgba(27, 82, 136, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.confianza-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 32px rgba(27, 82, 136, 0.25);
+}
+
+.confianza-card-title {
+    font-family: 'Open-Sauce-One-ExtraBold', sans-serif !important;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #114273;
+    margin-bottom: 0.9rem;
+    line-height: 1.3;
+}
+
+.confianza-card-text {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: #ffffff;
+    margin: 0;
+    font-weight: 400;
+}
+
+/* ==========================================================================
+RESPONSIVE
+========================================================================== */
+@media (max-width: 1199px) {
+    .confianza-title {
+        font-size: 1.9rem;
+    }
+    .confianza-arrows-bg {
+        right: -70px;
+        width: 580px;
+    }
+}
+
+@media (max-width: 991px) {
+    .confianza-title {
+        font-size: 1.7rem;
+        margin-bottom: 1rem;
+    }
+    .confianza-arrows-bg {
+        top: -30px;
+        right: -30px;
+        width: 500px;
+        opacity: 0.7;
+    }
+}
+
+@media (max-width: 576px) {
+    .confianza-title {
+        font-size: 1.45rem;
+    }
+    .confianza-card {
+        padding: 24px 20px;
+        border-radius: 22px;
+    }
+    .confianza-card-title {
+        font-size: 1.15rem;
+    }
+}
+
+/* Separación vertical DIRECTA y GARANTIZADA entre tarjetas */
+.confianza-section .col-sm-6 {
+    margin-bottom: 2rem !important;
+}
+
+/* ==========================================================================
+SECCIÓN 2: INGENIERÍA DE SUPERFICIES
+========================================================================== */
+.ingenieria-section {
+    background-color: #F6FAFD;
+    position: relative;
+}
+
+/* Fondo decorativo de puntos */
+.ingenieria-dots-bg {
+    position: absolute;
+    top: -10px;
+    left: -30px;
+    width: 380px;
+    opacity: 0.85;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.ingenieria-dots-bg img {
+    width: 100%;
+    height: auto;
+}
+
+/* Título de 5 líneas */
+.ingenieria-title {
+    font-family: 'Open-Sauce-One-ExtraBold', sans-serif !important;
+    font-size: 3.3rem;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+}
+
+.ingenieria-title .text-cyan {
+    color: #00A4C5;
+}
+
+.ingenieria-title .text-dark-blue {
+    color: #1D5288;
+}
+
+/* Tarjetas horizontales con margen y padding amplio */
+.ingenieria-card {
+    background: #FFFFFF;
+    border: 3px solid #B0C4DE; /* Borde celeste suave idéntico al boceto */
+    border-radius: 22px;
+    padding: 24px 30px;
+    box-shadow: 0 4px 12px rgba(27, 82, 136, 0.04);
+    margin-bottom: 15px;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ingenieria-card:hover {
+    transform: translateY(-2px);
+    border-color: #1D5288;
+    box-shadow: 0 8px 20px rgba(27, 82, 136, 0.1);
+}
+
+.ingenieria-card-title {
+    font-family: 'Open-Sauce-One-ExtraBold', sans-serif !important;
+    font-size: 1.55rem;
+    font-weight: 800;
+    color: #1D5288;
+    line-height: 1.25;
+}
+
+.ingenieria-card-text {
+    font-size: 1.25rem;
+    line-height: 1.4;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .ingenieria-title {
+        font-size: 1.9rem;
+    }
+    .ingenieria-dots-bg {
+        width: 260px;
+        top: 0;
+        left: -15px;
+    }
+}
+
+@media (max-width: 767px) {
+    .ingenieria-card {
+        padding: 18px 20px;
+        border-radius: 16px;
+    }
+    .ingenieria-card-title {
+        font-size: 1.05rem;
+        margin-bottom: 0.5rem !important;
+    }
+}

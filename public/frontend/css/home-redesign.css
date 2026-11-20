@@ -1,0 +1,1677 @@
+/* Paleta Institucional e Interfaz */
+
+/* 1. Texto Base: Raleway (Google Fonts) */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+
+@font-face {
+    font-family: 'Open Sauce';
+    /* Asegúrate de ajustar la ruta '../fonts/' según dónde guardes los archivos */
+    src: url('../fonts/OpenSauceOne-SemiBold.woff') format('woff2'),
+         url('../fonts/OpenSauceOne-SemiBold.woff') format('woff');
+    font-weight: bold;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Open-Sauce-One-ExtraBold';
+    src:  url('../fonts/OpenSauceOne-ExtraBold.woff') format('woff'),
+          url('Open-Sauce-One-ExtraBold.ttf.svg#Open-Sauce-One-ExtraBold') format('svg'),
+          url('Open-Sauce-One-ExtraBold.ttf.eot'),
+        url('Open-Sauce-One-ExtraBold.eot?#iefix') format('embedded-opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --dark-navy: #0E2E5B;
+    --cyan-accent: #00A4C5;
+    --grey-bg: #F6FAFD;
+    --dark-footer: #1c689a;
+    --font-titles: 'Open Sauce';
+    --font-body: 'Raleway', sans-serif;
+}
+
+/* Clases Útiles Universales */
+.rounded-4 {
+    border-radius: 18px !important;
+}
+.text-cyan {
+    color: var(--cyan-accent) !important;
+}
+.bg-cyan {
+    background-color: var(--cyan-accent) !important;
+}
+
+/* Modificaciones Header */
+.header-redesign-style .navbar-nav .nav-link {
+    color: #444 !important;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 10px 14px !important;
+}
+.header-redesign-style .navbar-nav .nav-item.active .nav-link {
+    color: var(--dark-navy) !important;
+    border-bottom: 2px solid var(--cyan-accent);
+}
+.btn-cotizar {
+    background-color: var(--cyan-accent);
+    color: white !important;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+.btn-cotizar:hover {
+    background-color: #008ba7;
+    box-shadow: 0 4px 10px rgba(0, 164, 197, 0.3);
+}
+
+/* Hero Elements */
+.hero-title {
+    color: #295FA6;
+    font-size: 4rem;
+    line-height: 1.15;
+    font-family: 'OpenOpen-Sauce-One-ExtraBold', sans-serif !important;
+}
+
+.arrow-prev, .arrow-next {
+    background-color: white;
+    border: 2px solid #E2E8F0;
+    color: var(--cyan-accent);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+.arrow-prev:hover, .arrow-next:hover {
+    background-color: var(--cyan-accent);
+    color: white;
+    border-color: var(--cyan-accent);
+}
+
+
+.w3l-hero-split .slider-caption-overlay {
+    top: auto !important;          /* Cancela la posición superior nativa del tema */
+    bottom: 0 !important;         /* Lo empuja firmemente hacia la base */
+    left: 0 !important;           /* Lo alinea a la izquierda */
+    right: auto !important;
+    text-align: left !important;  /* Garantiza la alineación del texto */
+    padding: 2rem 1.5rem !important; /* Controla el margen interno de separación */
+    
+    /* 💡 RECOMENDACIÓN: Degradado sutil solo en la base para que el texto blanco 
+       sea 100% legible si la imagen de fondo es muy clara */
+    background: linear-gradient(to top, rgba(14, 46, 91, 0.75) 0%, rgba(14, 46, 91, 0.3) 50%, transparent 100%) !important;
+    width: 100% !important;
+}
+
+/* Seccion Continuidad */
+.btn-outline-navy {
+    border: 2px solid var(--dark-navy);
+    color: var(--dark-navy);
+    background: transparent;
+    transition: all 0.3s;
+}
+.btn-outline-navy:hover {
+    background-color: var(--dark-navy);
+    color: white;
+}
+
+/* Tarjetas de Servicio Rejilla Grid */
+.service-card-modern {
+    border-radius: 20px !important; /* Curvatura exacta del boceto */
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+    background-color: #ffffff;
+    height: auto; /* Altura ideal y uniforme para la rejilla grid */
+}
+
+/* Contenedor e Imagen interna con auto-escala */
+.service-card-modern .card-img-wrapper {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.service-card-modern .card-img-top {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-card-modern:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 30px rgba(14, 46, 91, 0.15) !important;
+}
+
+.service-card-modern:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+/* Capa de Gradiente Oscuro Inferior (Suave y translúcido) */
+/* 1. Capa oscura de fondo opcional para asegurar que el texto blanco siempre se lea bien */
+.card-service-overlay {
+    background: transparent !important;
+}
+
+
+/* Botón Tipo Pastilla Verde (Pill Badge) */
+/* 2. El nuevo diseño de la píldora de texto (Estilo Soldadura / Estandarización) */
+.service-badge-pill {
+    border: 2px solid #00A4C5;          /* El color celeste/cyan corporativo */
+    color: #ffffff !important;
+    background-color: rgba(10, 25, 47, 0.5); /* Fondo oscuro semi-transparente */
+    padding: 6px 20px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    display: inline-block;
+    letter-spacing: 0.5px;
+}   
+
+/* Botón Circular Cian con Flecha */
+.btn-cyan-arrow {
+    background-color: #00A4C5 !important;
+    border: none !important;
+    width: 42px !important;
+    height: 42px !important;
+    min-width: 42px;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease, transform 0.2s ease !important;
+    box-shadow: 0 4px 12px rgba(0, 164, 197, 0.3);
+}
+
+.btn-cyan-arrow .fa {
+    font-size: 0.95rem;
+    color: #ffffff;
+    transition: transform 0.2s ease;
+}
+
+.btn-cyan-arrow:hover {
+    background-color: #008ba7;
+}
+
+/* Lead Capture Form Banner */
+.bg-navy-lead-capture {
+    background-color: var(--dark-footer);
+    position: relative;
+    overflow: hidden;
+}
+.bg-navy-lead-capture .form-control {
+    height: 46px;
+    border: 1px solid rgba(255,255,255,0.2);
+    background-color: rgba(255,255,255,0.1);
+    color: white;
+}
+.bg-navy-lead-capture .form-control::placeholder {
+    color: #cbd5e1;
+}
+.bg-navy-lead-capture .btn-cyan {
+    background-color: var(--cyan-accent);
+    height: 46px;
+    border: none;
+    transition: opacity 0.2s;
+}
+.bg-navy-lead-capture .btn-cyan:hover {
+    opacity: 0.9;
+}
+
+/* Animaciones del botón interno al interactuar con la tarjeta */
+.service-card-modern:hover .btn-cyan-arrow {
+    background-color: #008ba7 !important;
+    transform: scale(1.05);
+}
+
+.service-card-modern:hover .btn-cyan-arrow .fa {
+    transform: translateX(2px);
+}
+
+/* ==========================================================================
+   CORRECCIÓN DE MARGEN SUPERIOR (HERO SPLIT)
+   ========================================================================== */
+.w3l-hero-split {
+    padding-top: 2rem !important; /* Si el menú es fijo, ajusta este valor */
+    padding-bottom: 4rem !important;
+    margin-top: 0 !important;
+    overflow: hidden !important; /* Evita que los márgenes del h1 o del row empujen hacia arriba */
+}
+
+.w3l-hero-split .row,
+.w3l-hero-split .container {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Ajuste específico para cuando el menú se vuelve responsivo */
+@media (max-width: 991px) {
+    .w3l-hero-split {
+        padding-top: 2.5rem;
+        padding-bottom: 3rem;
+    }
+}
+
+/* Opcional: Si notas que el título interno aún se siente muy abajo, 
+   podemos ajustar el margen nativo del h2 */
+.hero-title {
+    margin-top: 0.5rem;
+}
+
+/* ==========================================================================
+   REDISEÑO DE LA SECCIÓN NUESTROS SERVICIOS (FORMATO PREMIUM)
+   ========================================================================== */
+
+.section-title-modern {
+    color: #004A98;
+    font-size: 3.15rem;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    font-family: 'OpenOpen-Sauce-One-ExtraBold', sans-serif !important;
+}
+
+.sub-title-modern {
+    font-size: 1.25rem;
+    max-width: 620px;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   ESTILOS DE LA CINTA DE LOGOS (RESPONSIVO Y UNIFORME)
+   ========================================================================== */
+.brands-logos-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem; /* Espaciado base en móviles */
+    padding: 0 1rem;
+}
+
+/* Distribución inteligente en pantallas de escritorio */
+@media (min-width: 992px) {
+    .brands-logos-flex {
+        justify-content: space-between;
+        gap: 1rem;
+    }
+}
+
+/* Envoltorio individual de cada logo */
+.brand-logo-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 90px;
+    max-width: 120px;
+    height: 40px; /* Altura de contención fija */
+}
+
+/* Control estricto sobre el archivo de imagen */
+.brand-logo-wrapper img {
+    max-height: 28px; /* Altura visual máxima para que se vean alineados */
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    
+    /* Efecto premium: Escala de grises sutil para integrarse al fondo. 
+       Cambia a color al pasar el cursor (opcional, como en los bocetos modernos) */
+    filter: grayscale(100%);
+    opacity: 0.65;
+    transition: all 0.3s ease;
+}
+
+.brand-logo-wrapper img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+/* ==========================================================================
+   REDISEÑO TOTAL DEL FOOTER (BASADO EN IMAGEN DE REFERENCIA NUEVA)
+   ========================================================================== */
+
+/* ==========================================================================
+   REDISEÑO TOTAL DEL FOOTER (EDICIÓN DEFINITIVA - 4 COLUMNAS)
+   ========================================================================== */
+
+.custom-modern-footer {
+    background-color: #194b81 !important; /* Azul Marino Corporativo */
+    color: #A0AEC0 !important;
+    font-family: var(--font-body) !important;
+}
+
+.custom-modern-footer .footer-29 {
+    background-color: transparent !important;
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+}
+
+/* Contenedor y dimensiones del Logotipo Ampliado */
+.custom-modern-footer .footer-logo-container {
+    display: flex;
+    align-items: center;
+    min-height: 55px; /* Crea un área de alineación vertical estable */
+}
+
+.custom-modern-footer .footer-logo-large {
+    max-height: 55px !important; /* Incrementado para que destaque como la referencia */
+    width: auto;
+    object-fit: contain;
+}
+
+/* Descripción Institucional */
+.custom-modern-footer .footer-text-description {
+    font-size: 0.92rem;
+    line-height: 1.65;
+    color: #CBD5E1;
+    margin-top: 15px;
+}
+
+/* Títulos de las Columnas */
+.custom-modern-footer .footer-title-modern {
+    color: #ffffff !important;
+    font-size: 1.15rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 1.75rem !important;
+    text-transform: none !important;
+    letter-spacing: 0.5px;
+    height: 35px; /* Alinea los títulos horizontalmente entre sí */
+    display: flex;
+    align-items: center;
+}
+
+/* Listas de Enlaces (Columnas 2 y 3) */
+.custom-modern-footer .footer-links-list {
+    padding-left: 0 !important;
+    list-style: none !important;
+}
+
+.custom-modern-footer .footer-links-list li {
+    list-style: none !important;
+    margin-bottom: 12px !important;
+    padding-left: 0 !important;
+    display: flex;
+    align-items: center;
+}
+
+/* Inserción del ícono Check Blanco antes del enlace */
+.custom-modern-footer .footer-links-list li::before {
+    content: "\f00c" !important; /* Código unicode para el check de FontAwesome */
+    
+    /* 🌟 CORRECCIÓN: Cambiado de var(--font-body) a Font Awesome */
+    font-family: "Font Awesome 5 Free" !important; 
+    
+    display: inline-block !important;
+    color: #ffffff !important; /* Color blanco solicitado */
+    font-size: 0.78rem !important; /* Tamaño sutil para que no compita con el texto */
+    margin-right: 10px !important; /* Espaciado entre el check y el texto */
+    font-weight: 900 !important; /* Requerido para que cargue la versión Solid en FA5 */
+}
+
+.custom-modern-footer .footer-links-list li a {
+    color: #CBD5E1 !important;
+    font-size: 0.92rem;
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+    display: inline-block;
+}
+
+/* Efecto Hover */
+.custom-modern-footer .footer-links-list li a:hover {
+    color: #00A4C5 !important;
+    transform: translateX(2px); /* Desplazamiento leve para no romper la alineación del check */
+}
+
+/* Información de Contacto (Columna 4) */
+.custom-modern-footer .footer-contact-info {
+    padding-left: 0 !important;
+    list-style: none !important;
+}
+
+.custom-modern-footer .footer-contact-info li {
+    display: flex !important;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px !important;
+    font-size: 0.92rem;
+    color: #CBD5E1 !important;
+}
+
+.custom-modern-footer .footer-contact-info li::before {
+    display: none !important;
+}
+
+.custom-modern-footer .footer-contact-info li a {
+    color: #CBD5E1 !important;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.custom-modern-footer .footer-contact-info li a:hover {
+    color: #00A4C5 !important;
+}
+
+.custom-modern-footer .text-white-info {
+    color: #CBD5E1;
+}
+
+/* Iconos de Contacto */
+.custom-modern-footer .icon-cyan-footer {
+    color: #00A4C5 !important;
+    font-size: 1rem;
+    width: 20px;
+    text-align: center;
+}
+
+/* Redes Sociales Estilo Minimalista (Sin fondos) */
+.custom-modern-footer .footer-social-minimal {
+    display: flex;
+    gap: 20px;
+}
+
+.custom-modern-footer .footer-social-minimal a {
+    color: #CBD5E1 !important;
+    font-size: 1.1rem;
+    transition: color 0.2s ease, transform 0.2s ease;
+    text-decoration: none;
+}
+
+.custom-modern-footer .footer-social-minimal a:hover {
+    color: #00A4C5 !important;
+    transform: translateY(-2px);
+}
+
+/* Copyright Bar */
+.custom-modern-footer .w3l-copyright {
+    background-color: #091E3D !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding-top: 1.25rem !important;
+    padding-bottom: 1.25rem !important;
+}
+
+
+/* Franja de Copyright en Negro Absoluto */
+.custom-modern-footer .w3l-copyright {
+    background-color: #000000 !important; /* Negro Puro */
+    border-top: 1px solid rgba(255, 255, 255, 0.08); /* Línea divisoria sutil */
+    padding-top: 1.25rem !important;
+    padding-bottom: 1.25rem !important;
+}
+
+.custom-modern-footer .copy-footer-29 {
+    color: #94A3B8 !important; /* Gris claro/plata para excelente contraste sobre fondo oscuro */
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+
+/* ==========================================================================
+   NUEVA SECCIÓN DE CAPTURA DE LEADS Y CONTACTO (ESTILO DIVIDIDO)
+   ========================================================================== */
+
+/* Círculos de íconos del lado izquierdo */
+.contact-quick-info-box .info-icon-circle {
+    width: 44px;
+    height: 44px;
+    background-color: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #00A4C5; /* Color Cian Institucional */
+    font-size: 1.05rem;
+    transition: all 0.3s ease;
+}
+
+.contact-quick-info-box .d-flex:hover .info-icon-circle {
+    background-color: #00A4C5;
+    color: #ffffff;
+    transform: scale(1.05);
+}
+
+/* Etiquetas del Formulario */
+.lead-form-card .lead-label-custom {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #4A5568;
+    margin-bottom: 6px;
+}
+
+.lead-form-card h4 {
+   font-family: 'OpenOpen-Sauce-One-ExtraBold', sans-serif !important;
+}
+
+/* Estilización de Inputs Modernos (Bordes limpios como la referencia) */
+.lead-form-card .lead-input-style {
+    background-color: #F8FAFC !important;
+    border: 1px solid #E2E8F0 !important;
+    border-radius: 8px !important; /* Esquinas suavizadas elegantes */
+    padding: 12px 16px !important;
+    font-size: 0.92rem !important;
+    color: #334155 !important;
+    transition: all 0.25s ease !important;
+    height: auto !important;
+}
+
+.lead-form-card .lead-input-style:focus {
+    background-color: #ffffff !important;
+    border-color: #00A4C5 !important;
+    box-shadow: 0 0 0 3px rgba(0, 164, 197, 0.15) !important;
+}
+
+/* Textarea específico */
+.lead-form-card textarea.lead-input-style {
+    resize: none;
+}
+
+/* Botón de Enbío de Alta Conversión */
+.lead-form-card .btn-submit-lead {
+    background-color: #00A4C5 !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 8px !important;
+    font-size: 0.9rem !important;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 12px rgba(0, 164, 197, 0.25);
+    transition: all 0.3s ease !important;
+}
+
+.lead-form-card .btn-submit-lead:hover {
+    background-color: #0B2E5B !important; /* Cambia a azul oscuro institucional en Hover */
+    box-shadow: 0 6px 16px rgba(11, 46, 91, 0.3);
+    transform: translateY(-1px);
+}
+
+/* 1. Forzar la eliminación de márgenes y asegurar el fondo en la sección de contacto */
+.lead-capture-modern-section {
+    margin-bottom: 0 !important;
+    padding-bottom: 3rem !important; /* Espacio prudente para la curva inferior de la tarjeta */
+    background-color: #1a6698 !important;
+}
+
+/* 2. Corregir el contenedor principal del footer de la plantilla */
+.custom-modern-footer {
+    margin-top: 0 !important;
+    padding-top: 2rem !important; /* Sobrescribe el padding-top alto que hereda del tema original */
+    background-color: #0E2E5B !important; /* Pinta el contenedor exterior con el azul oficial */
+    border-top: none !important;
+}
+
+/* 3. Asegurar que los contenedores internos se acoplen perfectamente */
+.custom-modern-footer .footer-29 {
+    padding-top: 0 !important;
+    background-color: #0E2E5B !important;
+}
+
+/* ==========================================================================
+   LISTADO DE PASOS CONECTADOS (BOLITAS Y LÍNEA VERTICAL)
+   ========================================================================== */
+
+.connected-step-list {
+    position: relative;
+}
+
+/* Contenedor de cada ítem de la lista */
+.connected-step-list li {
+    position: relative;
+}
+
+/* La bolita celeste perfecta usando CSS3 */
+.connected-step-list .step-bullet {
+    width: 24px;
+    height: 24px;
+    background-color: #00A4C5; /* El color cyan exacto de tu paleta */
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+    z-index: 2;
+    position: relative;
+}
+
+/* ==========================================================================
+   CORRECCIÓN: LÍNEA VERTICAL EXTENDIDA PARA ENLAZAR LAS BOLITAS
+   ========================================================================== */
+
+.connected-step-list li:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    /* Centrado horizontal exacto (mitad de la bolita de 24px) */
+    left: 11px; 
+    top: 50%; 
+    
+    /* 🌟 CAMBIO CLAVE: Sumamos el margen mb-4 (1.5rem) para cerrar la brecha */
+    height: calc(100% + 1.5rem); 
+    
+    width: 2px; 
+    background-color: #b6c6dd; 
+    z-index: 1;
+}
+
+/* ==========================================================================
+   NUEVO ESTILO DE TARJETAS DE SERVICIOS (FLECHA Y TEXTO)
+   ========================================================================== */
+
+/* Contenedor de elementos abajo (flotando sobre la imagen) */
+.card-footer-elements {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    z-index: 3;
+}
+
+/* Reemplazo del direccional antiguo por la nueva imagen */
+.service-chevron-arrow {
+    width: 48px;                        /* Ancho ideal para los 3 chevrones */
+    height: 32px;                       /* Alto proporcional */
+    background-image: url('../images/arrow-chevron.png'); /* Asegúrate de que apunte a la ruta de tu arrow.png */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center right;
+    display: inline-block;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    text-decoration: none;
+}
+
+/* Efecto Hover opcional: la flecha se mueve sutilmente a la derecha al pasar el mouse */
+.service-card-modern:hover .service-chevron-arrow {
+    transform: translateX(6px);         /* Desplaza sutilmente la flecha a la derecha */
+}
+
+/* 💡 BONUS: El nuevo diseño del botón "Soldadura" (borde fino azul) */
+.service-pill-btn {
+    border: 2px solid #00A4C5; /* Tu color celeste corporativo */
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.4); /* Fondo semi-transparente oscuro */
+    padding: 8px 24px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   NUEVAS FLECHAS PERSONALIZADAS DE BLOQUE PARA EL HERO SLIDER
+   ========================================================================== */
+
+.arrow-custom-prev, 
+.arrow-custom-next {
+    width: 85px;                      /* Ancho proporcional para la flecha de bloque */
+    height: 70px;                     /* Alto proporcional */
+    background-image: url('../images/slider-arrows.png'); /* Ruta a tu imagen de flechas */
+    background-repeat: no-repeat;
+    background-size: 200% 100%;       /* Duplicamos el ancho del fondo para contener ambas flechas */
+    background-color: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    cursor: pointer;
+}
+
+/* --- FLECHA IZQUIERDA (PREV) --- */
+.arrow-custom-prev {
+    /* Toma la mitad izquierda de la imagen (Flecha Rellena) */
+    background-position: 0% center;   
+    
+    /* Como ambas flechas apuntan a la derecha en el recurso, la giramos 180 grados */
+    transform: rotate(180deg);        
+}
+
+/* --- FLECHA DERECHA (NEXT) --- */
+.arrow-custom-next {
+    /* Toma la mitad derecha de la imagen (Flecha Calada/Outline) */
+    background-position: 100% center; 
+}
+
+/* --- EFECTOS HOVER (MICRO-INTERACCIONES) --- */
+.arrow-custom-prev:hover {
+    /* Mantiene el giro de 180° y añade un leve desplazamiento hacia la izquierda */
+    transform: rotate(180deg) scale(1.08) translateX(3px);
+}
+
+.arrow-custom-next:hover {
+    /* Añade un leve desplazamiento hacia la derecha y escala */
+    transform: scale(1.08) translateX(3px);
+}
+
+/* Efecto visual al hacer click */
+.arrow-custom-prev:active,
+.arrow-custom-next:active {
+    opacity: 0.7;
+}
+
+.lead-input-style.form-select {
+    appearance: auto !important; /* Fuerza al navegador a mostrar la flecha nativa */
+    -webkit-appearance: auto !important;
+    -moz-appearance: auto !important;
+    padding-right: 2rem; /* Espacio para que el texto no tape la flecha */
+}
+
+/* ==========================================================================
+   FORZAR TAMAÑO COMPACTO (SM) EN LOS INPUTS PERSONALIZADOS
+   ========================================================================== */
+.lead-form-card .lead-input-style.form-control-sm,
+.lead-form-card .lead-input-style.form-select-sm {
+    padding: 6px 12px !important;  /* Reduce a la mitad el relleno vertical */
+    font-size: 0.85rem !important;  /* Reduce sutilmente la letra para que sea proporcional */
+}
+
+/* ==========================================================================
+   CORRECCIÓN DE ANCHO Y ALINEACIÓN PARA CONTROLES SELECT
+   ========================================================================== */
+.lead-form-card select.lead-input-style {
+    display: block !important;   /* Fuerza a que baje y se posicione debajo del label */
+    width: 100% !important;      /* Obliga al select a estirarse al 100% de su columna col-md-6 */
+}
+
+/* ==========================================================================
+   COMPONENTE PREMIUM DE CARGA DE ARCHIVOS (DRAG & DROP)
+   ========================================================================== */
+.dropzone-custom-wrapper {
+    background-color: #F8FAFC !important;
+    border: 2px dashed #CBD5E1 !important;
+    border-radius: 10px !important;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    position: relative;
+}
+
+/* Efecto visual al arrastrar encima o hacer hover */
+.dropzone-custom-wrapper:hover,
+.dropzone-custom-wrapper.dragover {
+    border-color: #00A4C5 !important;
+    background-color: #F0F9FF !important;
+}
+
+.dropzone-icon {
+    font-size: 1.6rem;
+    color: #94A3B8;
+    transition: color 0.2s;
+}
+
+.dropzone-custom-wrapper:hover .dropzone-icon {
+    color: #00A4C5;
+}
+
+.dropzone-text {
+    font-size: 0.9rem;
+    color: #475569;
+}
+
+/* Fila de cada Archivo Cargado en la Vista Previa */
+.file-preview-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    color: #334155;
+    transition: background-color 0.2s;
+}
+
+.file-preview-item:hover {
+    background-color: #F1F5F9;
+}
+
+.file-preview-name {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    max-width: 85%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.btn-remove-file {
+    background: none;
+    border: none;
+    color: #EF4444;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    line-height: 1;
+    padding: 0 4px;
+    transition: transform 0.15s;
+}
+
+.btn-remove-file:hover {
+    transform: scale(1.25);
+}
+
+/* ==========================================================================
+   ACOPLE DEL OPERARIO FLUSH CONTRA EL FOOTER
+   ========================================================================== */
+
+/* 1. Eliminamos el padding inferior de la sección y del contenedor general */
+.section-cotizacion {
+    padding-bottom: 0 !important;
+}
+
+.section-cotizacion h2 {
+    font-family: 'OpenOpen-Sauce-One-ExtraBold', sans-serif !important;
+}
+
+
+.section-cotizacion .container {
+    padding-bottom: 0 !important;
+}
+
+/* 2. Forzamos a que la columna y cualquier tarjeta contenedora no tengan margen abajo */
+.operator-footer-column,
+.operator-modern-card {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+.operator-modern-card {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+    text-align: left !important; /* Alinea al inicio */
+}
+
+.operator-footer-colum {
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.operator-footer-colum h6 {
+    color: #ffffff !important;
+    font-family: 'OpenOpen-Sauce-One-ExtraBold', sans-serif !important;
+}
+
+/* 3. Quitamos el espacio inferior "fantasma" de la imagen convirtiéndola en bloque */
+.operator-flush-img {
+    display: block !important;
+    width: 100%;
+    max-width: 440px;
+    height: auto;
+    margin-bottom: 0 !important;
+    vertical-align: bottom !important; /* Asegura el contacto directo con la base */
+}
+
+@media (min-width: 992px) {
+    .operator-footer-colum {
+        padding-left: 0 !important; /* Se pega directo al margen izquierdo del layout */
+    }
+}
+
+
+/* ==========================================================================
+CONTROL TOTAL DEL LOGO - RESPONSIVO
+========================================================================== */
+/* Logo en escritorio */
+.logo-responsive {
+    height: 71px !important;
+    width: auto !important;
+    transition: height 0.3s ease;
+}
+
+/* Logo en tablets y móviles (< 992px) */
+@media (max-width: 991px) {
+    .logo-responsive {
+        height: 40px !important;
+    }
+    
+    /* Compactar el header */
+    header,
+    header.nav-fixed {
+        height: 65px !important;
+        padding: 8px 0 !important;
+    }
+    
+    /* Alinear verticalmente navbar */
+    .navbar {
+        align-items: center !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+    
+    /* Menú hamburguesa sin margen superior */
+    .navbar-toggler {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        padding: 6px 10px !important;
+    }
+}
+
+/* Logo en móviles pequeños (< 576px) */
+@media (max-width: 576px) {
+    .logo-responsive {
+        height: 35px !important;
+    }
+    
+    header,
+    header.nav-fixed {
+        height: 58px !important;
+    }
+}
+
+
+/* Responsive para móviles */
+@media (max-width: 767px) {
+    .brand-belt-grey .col-lg-4,
+    .brand-belt-grey .col-lg-8 {
+        text-align: center;
+    }
+    
+    .brand-belt-grey p {
+        font-size: 0.95rem !important;
+        margin-bottom: 15px !important;
+    }
+    
+    .brand-belt-grey .brand-logo-item img {
+        max-height: 40px;
+    }    
+}
+
+/* ==========================================================================
+PATRÓN DE FLECHAS DIAGONALES - SOLO ESQUINA SUPERIOR IZQUIERDA
+========================================================================== */
+.arrow-pattern-corner {
+    position: absolute;
+    top: -50px;
+    left: -50px;  /* 🌟 CAMBIO: de right a left */
+    width: 55%;
+    height: 70%;
+    max-width: 700px;
+    max-height: 500px;
+    pointer-events: none;
+    z-index: 1;
+    
+    /* Patrón SVG de flechas grandes en diagonal */
+    background-image: 
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpath fill='%2394A3B8' d='M60 15L25 50h20v50h30V50h20L60 15z' opacity='0.35'/%3E%3C/svg%3E"),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpath fill='%2394A3B8' d='M60 15L25 50h20v50h30V50h20L60 15z' opacity='0.25'/%3E%3C/svg%3E");
+    background-position: 0 0, 60px 60px;
+    background-size: 100px 100px, 100px 100px;
+    background-repeat: repeat;
+    
+    /* 🌟 CAMBIO: Máscara radial desde la esquina superior izquierda */
+    -webkit-mask-image: radial-gradient(ellipse at top left, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0) 70%);
+    mask-image: radial-gradient(ellipse at top left, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0) 70%);
+    
+    /* Opacidad general sutil */
+    opacity: 0.7;
+}
+
+/* Ajuste responsive para tablets */
+@media (max-width: 991px) {
+    .arrow-pattern-corner {
+        width: 70%;
+        height: 50%;
+        top: -30px;
+        left: -30px;  /* 🌟 CAMBIO: de right a left */
+        background-size: 80px 80px, 80px 80px;
+    }
+}
+
+/* Ajuste responsive para móviles */
+@media (max-width: 576px) {
+    .arrow-pattern-corner {
+        width: 90%;
+        height: 40%;
+        top: -20px;
+        left: -20px;  /* 🌟 CAMBIO: de right a left */
+        background-size: 60px 60px, 60px 60px;
+        opacity: 0.5;
+    }
+}
+
+/* ==========================================================================
+ALINEACIÓN VERTICAL DE LOGOS - CARRUSEL CLIENTES
+========================================================================== */
+.logo-view .item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px; /* Altura fija para alineación vertical perfecta */
+}
+
+.logo-view .item img {
+    max-height: 45px !important;
+    width: auto !important;
+    object-fit: contain; /* Mantiene proporción sin distorsionar */
+    display: block;
+    margin: 0 auto; /* Centrado horizontal adicional */
+}
+
+/* Ajuste responsive para móviles */
+@media (max-width: 768px) {
+    .logo-view .item {
+        height: 60px;
+    }
+    .logo-view .item img {
+        max-height: 35px !important;
+    }
+}
+
+/* ==========================================================================
+PÁGINA NOSOTROS - ESTILOS COMPLETOS UNIFICADOS
+Multi Beland S.A.C.
+========================================================================== */
+
+/* ==========================================================================
+1. HERO SECTION - BANNER PRINCIPAL
+========================================================================== */
+.nosotros-hero-section {
+    position: relative;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    background-size: cover !important;
+    background-position: center right !important;
+    background-repeat: no-repeat;
+}
+
+.nosotros-hero-section h1 {
+    font-family: 'Open Sauce', sans-serif !important;
+    font-weight: 600 !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    line-height: 1.2;
+}
+
+.nosotros-hero-section p {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    line-height: 1.7;
+}
+
+/* Responsive Hero */
+@media (max-width: 991px) {
+    .nosotros-hero-section {
+        min-height: 400px;
+        background-position: center center !important;
+    }
+    
+    .nosotros-hero-section h1 {
+        font-size: 2rem !important;
+    }
+    
+    .nosotros-hero-section p {
+        font-size: 1rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .nosotros-hero-section {
+        min-height: 350px;
+    }
+    
+    .nosotros-hero-section h1 {
+        font-size: 1.6rem !important;
+    }
+}
+
+/* ==========================================================================
+2. SECCIÓN MISIÓN Y VISIÓN
+========================================================================== */
+
+/* Patrón decorativo de puntos - Esquina inferior izquierda */
+.dot-pattern-mision {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 280px;
+    height: 280px;
+    background-image: radial-gradient(circle, #00A4C5 2px, transparent 2px);
+    background-size: 18px 18px;
+    opacity: 0.25;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Responsive patrón de puntos */
+@media (max-width: 991px) {
+    .dot-pattern-mision {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 576px) {
+    .dot-pattern-mision {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+/* Contenedor de la tarjeta de transformación */
+.tractor-transform-container {
+    background-color: #ffffff !important;
+    border-radius: 18px !important;
+    box-shadow: 0 10px 40px rgba(14, 46, 91, 0.1) !important;
+    padding: 20px;
+}
+
+@media (max-width: 991px) {
+    .tractor-transform-container {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}
+
+/* ==========================================================================
+3. EFECTO BEFORE/AFTER - TRANSFORMACIÓN TRACTOR
+========================================================================== */
+
+/* Wrapper principal */
+.before-after-wrapper {
+    position: relative;
+    width: 100%;
+    cursor: ew-resize;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    touch-action: none;
+}
+
+.before-after-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    pointer-events: none;
+}
+
+/* Imagen BEFORE (superpuesta con clip-path) */
+.before-image {
+    transition: clip-path 0.1s ease-out;
+    will-change: clip-path;
+}
+
+/* Imagen AFTER (fondo base) */
+.after-image {
+    width: 100%;
+}
+
+/* Línea divisoria interactiva */
+.divider-line {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background: #00A4C5;
+    transform: translateX(-50%);
+    cursor: ew-resize;
+    z-index: 10;
+    transition: left 0.1s ease-out;
+    will-change: left;
+}
+
+/* Botón circular central de la línea divisoria */
+.divider-handle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 44px;
+    height: 44px;
+    background: #00A4C5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 164, 197, 0.4);
+    border: 3px solid #ffffff;
+    cursor: ew-resize;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.divider-handle .fa {
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+/* Hover en la línea divisoria */
+.divider-line:hover .divider-handle,
+.divider-line:active .divider-handle {
+    transform: translate(-50%, -50%) scale(1.15);
+    background-color: #0E2E5B;
+}
+
+/* Etiquetas ANTES y DESPUÉS */
+.label-before,
+.label-after {
+    position: absolute;
+    top: 0;
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #ffffff;
+    z-index: 5;
+}
+
+.label-before {
+    left: 12px;
+    background-color: rgba(14, 46, 91, 0.85);
+}
+
+.label-after {
+    right: 12px;
+    background-color: rgba(0, 164, 197, 0.85);
+}
+
+/* Texto descriptivo inferior */
+.tractor-transform-hint {
+    font-size: 0.85rem;
+    color: #6c757d;
+}
+
+.tractor-transform-hint .fa {
+    color: #00A4C5;
+}
+
+/* ==========================================================================
+4. ANIMACIÓN AUTOMÁTICA INICIAL
+========================================================================== */
+@keyframes autoReveal {
+    0% {
+        clip-path: inset(0 0% 0 0);
+    }
+    50% {
+        clip-path: inset(0 0% 0 0);
+    }
+    100% {
+        clip-path: inset(0 50% 0 0);
+    }
+}
+
+.before-image.auto-animate {
+    animation: autoReveal 3s ease-in-out forwards;
+}
+
+/* ==========================================================================
+5. RESPONSIVE - EFECTO BEFORE/AFTER
+========================================================================== */
+@media (max-width: 576px) {
+    .label-before,
+    .label-after {
+        font-size: 0.7rem !important;
+        padding: 4px 10px !important;
+    }
+    
+    .divider-handle {
+        width: 36px !important;
+        height: 36px !important;
+    }
+    
+    .divider-handle .fa {
+        font-size: 0.85rem;
+    }
+}
+
+/* ==========================================================================
+6. SECCIÓN INGENIERÍA HUMANA - EQUIPO
+========================================================================== */
+.ingenieria-humana-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.ingenieria-humana-section .equipo-image {
+    border-radius: 18px;
+    object-fit: cover;
+    object-position: center top;
+}
+
+/* Flechas direccionales decorativas */
+.flechas-direccionales {
+    max-width: 180px;
+    height: auto;
+}
+
+/* Botón WhatsApp flotante */
+.btn-whatsapp-float {
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(37, 211, 102, 0.5);
+}
+
+.btn-whatsapp-float .fa-whatsapp {
+    font-size: 2rem;
+    color: #ffffff;
+}
+
+/* ==========================================================================
+7. SECCIÓN PILARES OPERATIVOS
+========================================================================== */
+.pilar-card {
+    background-color: #194b81;
+    border-radius: 18px;
+    padding: 2rem 1.5rem;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(14, 46, 91, 0.1);
+}
+
+.pilar-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(14, 46, 91, 0.2);
+}
+
+.pilar-card h5 {
+    font-family: 'Open Sauce', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+}
+
+.pilar-card p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 0;
+}
+
+/* ==========================================================================
+8. SECCIÓN EMPRESAS QUE CONFÍAN
+========================================================================== */
+.clientes-carousel-section {
+    background-color: #F6FAFD;
+}
+
+.clientes-carousel-section .logo-view .item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+}
+
+.clientes-carousel-section .logo-view .item img {
+    max-height: 45px !important;
+    width: auto !important;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .clientes-carousel-section .logo-view .item {
+        height: 60px;
+    }
+    
+    .clientes-carousel-section .logo-view .item img {
+        max-height: 35px !important;
+    }
+}
+
+/* ==========================================================================
+9. SECCIÓN SERVICIOS ADICIONALES
+========================================================================== */
+.servicios-adicionales-section {
+    background-color: #F6FAFD;
+}
+
+.servicio-adicional-card {
+    border-radius: 18px;
+    padding: 2rem 1.5rem;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.servicio-adicional-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(14, 46, 91, 0.15);
+}
+
+.servicio-adicional-card .servicio-icono {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+    object-fit: contain;
+}
+
+.servicio-adicional-card h5 {
+    font-family: 'Open Sauce', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 0;
+}
+
+/* Variante oscura (fondo azul marino) */
+.servicio-adicional-card.card-dark {
+    background-color: #0E2E5B;
+}
+
+.servicio-adicional-card.card-dark h5 {
+    color: #ffffff;
+}
+
+/* Variante clara (fondo blanco con borde) */
+.servicio-adicional-card.card-light {
+    background-color: #ffffff;
+    border: 2px solid #E2E8F0;
+}
+
+.servicio-adicional-card.card-light h5 {
+    color: #0E2E5B;
+}
+
+/* Navegación del carrusel de servicios adicionales */
+.owl-servicios-adicionales .owl-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    padding: 0 10px;
+}
+
+.owl-servicios-adicionales .owl-nav button {
+    pointer-events: auto;
+    background-color: #00A4C5 !important;
+    color: #ffffff !important;
+    width: 45px;
+    height: 45px;
+    border-radius: 50% !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 164, 197, 0.3);
+    border: none !important;
+}
+
+.owl-servicios-adicionales .owl-nav button:hover {
+    background-color: #0E2E5B !important;
+    transform: scale(1.1);
+}
+
+.owl-servicios-adicionales .owl-nav .owl-prev {
+    margin-left: -20px;
+}
+
+.owl-servicios-adicionales .owl-nav .owl-next {
+    margin-right: -20px;
+}
+
+/* ==========================================================================
+   BOTÓN FLOTANTE DE WHATSAPP PREMIUM
+   ========================================================================== */
+.whatsapp-float-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    color: #ffffff !important;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 32px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 8px 24px rgba(37, 211, 102, 0.25);
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+    text-decoration: none;
+}
+
+/* Efecto Hover Premium */
+.whatsapp-float-btn:hover {
+    transform: scale(1.08) translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2), 0 12px 28px rgba(37, 211, 102, 0.35);
+    background-color: #20ba5a;
+}
+
+/* Icono centrado */
+.whatsapp-float-icon {
+    margin-top: 0;
+}
+
+/* Optimización para dispositivos móviles */
+@media (max-width: 767px) {
+    .whatsapp-float-btn {
+        bottom: 20px;
+        right: 20px;
+        width: 52px;
+        height: 52px;
+        font-size: 28px;
+    }
+}
+
+/* ============================================
+   CARRUSEL DE LOGOS - PADDING REDUCIDO
+   ============================================ */
+
+/* Ocultar flechas del slider */
+.hero-slider-wrapper .owl-nav {
+    display: none !important;
+}
+
+/* 1. Contenedor reducido a 140px para eliminar el exceso superior/inferior */
+.brand-belt-grey #owl-brands .brand-logo-item {
+    height: 140px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 5px !important;
+    overflow: visible !important;
+}
+
+/* 2. Regla BASE (Mantiene los 130px de tamaño gigante) */
+.brand-belt-grey #owl-brands .brand-logo-item img {
+    height: 130px !important;
+    width: auto !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+    filter: brightness(0) invert(1) !important;
+    opacity: 0.85 !important;
+    transition: opacity 0.3s ease, transform 0.3s ease !important;
+    margin: 0 auto !important;
+    display: block !important;
+}
+
+/* Base de Hover */
+.brand-belt-grey #owl-brands .brand-logo-item img:hover {
+    opacity: 1 !important;
+}
+
+/* ============================================
+   3. ESCALADO ÓPTICO INDIVIDUAL (INALTERADO)
+   ============================================ */
+
+/* JOHN DEERE */
+.brand-belt-grey #owl-brands .brand-logo-item img.logo-johndeere,
+.brand-belt-grey #owl-brands .brand-logo-item img[alt="John Deere"] {
+    transform: scale(1.8) !important;
+}
+.brand-belt-grey #owl-brands .brand-logo-item img.logo-johndeere:hover,
+.brand-belt-grey #owl-brands .brand-logo-item img[alt="John Deere"]:hover {
+    transform: scale(1.95) !important;
+}
+
+/* VOLVO */
+.brand-belt-grey #owl-brands .brand-logo-item img.logo-volvo,
+.brand-belt-grey #owl-brands .brand-logo-item img[alt="Volvo"] {
+    transform: scale(1.45) !important;
+}
+.brand-belt-grey #owl-brands .brand-logo-item img.logo-volvo:hover,
+.brand-belt-grey #owl-brands .brand-logo-item img[alt="Volvo"]:hover {
+    transform: scale(1.6) !important;
+}
+
+/* HITACHI */
+.brand-belt-grey #owl-brands .brand-logo-item img.logo-hitachi,
+.brand-belt-grey #owl-brands .brand-logo-item img[alt="Hitachi"] {
+    transform: scale(1.45) !important;
+}
+.brand-belt-grey #owl-brands .brand-logo-item img.logo-hitachi:hover,
+.brand-belt-grey #owl-brands .brand-logo-item img[alt="Hitachi"]:hover {
+    transform: scale(1.6) !important;
+}
+
+/* CAT */
+.brand-belt-grey #owl-brands .brand-logo-item img.logo-cat,
+.brand-belt-grey #owl-brands .brand-logo-item img[alt="CAT"] {
+    transform: scale(0.85) !important;
+}
+.brand-belt-grey #owl-brands .brand-logo-item img.logo-cat:hover,
+.brand-belt-grey #owl-brands .brand-logo-item img[alt="CAT"]:hover {
+    transform: scale(0.95) !important;
+}
+
+/* JCB */
+.brand-belt-grey #owl-brands .brand-logo-item img.logo-jcb,
+.brand-belt-grey #owl-brands .brand-logo-item img[alt="JCB"] {
+    transform: scale(0.95) !important;
+}
+.brand-belt-grey #owl-brands .brand-logo-item img.logo-jcb:hover,
+.brand-belt-grey #owl-brands .brand-logo-item img[alt="JCB"]:hover {
+    transform: scale(1.05) !important;
+}
+
+/* DOOSAN */
+.brand-belt-grey #owl-brands .brand-logo-item img.logo-doosan,
+.brand-belt-grey #owl-brands .brand-logo-item img[alt="Doosan"] {
+    transform: scale(1.05) !important;
+}
+.brand-belt-grey #owl-brands .brand-logo-item img.logo-doosan:hover,
+.brand-belt-grey #owl-brands .brand-logo-item img[alt="Doosan"]:hover {
+    transform: scale(1.15) !important;
+}
+
+/* KOMATSU */
+.brand-belt-grey #owl-brands .brand-logo-item img.logo-komatsu,
+.brand-belt-grey #owl-brands .brand-logo-item img[alt="Komatsu"] {
+    transform: scale(1.15) !important;
+}
+.brand-belt-grey #owl-brands .brand-logo-item img.logo-komatsu:hover,
+.brand-belt-grey #owl-brands .brand-logo-item img[alt="Komatsu"]:hover {
+    transform: scale(1.25) !important;
+}

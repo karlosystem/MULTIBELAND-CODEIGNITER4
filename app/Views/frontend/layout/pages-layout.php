@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <title> <?= isset($pageTitle) ? $pageTitle : 'Nueva Pagina Titulo' ?> </title>
     <meta charset="utf-8">
@@ -15,14 +16,37 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.5.0/css/all.min.css">
     <link rel="stylesheet" href="<?= base_url('frontend/css/style-starter.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('frontend/css/home-redesign.css') ?>"> <!-- ← NUEVA LÍNEA -->
+    <link rel="stylesheet" href="<?= base_url('frontend/css/nosotros.css') ?>"> <!-- ← NUEVA LÍNEA -->
+    <link rel="stylesheet" href="<?= base_url('frontend/css/cobertura.css') ?>"> <!-- ← NUEVA LÍNEA -->
+    <link rel="stylesheet" href="<?= base_url('frontend/css/servicios.css') ?>"> <!-- ← NUEVA LÍNEA -->
+    <link rel="stylesheet" href="<?= base_url('frontend/css/tapiceria.css') ?>"> <!-- ← NUEVA LÍNEA -->
+    <link rel="stylesheet" href="<?= base_url('frontend/css/soldadura.css') ?>"> <!-- ← NUEVA LÍNEA -->
+    <link rel="stylesheet" href="<?= base_url('frontend/css/vidrieria.css') ?>"> <!-- ← NUEVA LÍNEA -->
+    <link rel="stylesheet" href="<?= base_url('frontend/css/restauracion-cabinas.css') ?>"> <!-- ← NUEVA LÍNEA -->
+
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.5.6/css/ionicons.min.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E259748V6H"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-E259748V6H');
+    </script>
+
 </head>
 
 <body>
 
     <?php include('inc/header.php') ?>
 
-    <?= $this->renderSection('content') ?>;
-    
+    <?= $this->renderSection('content') ?>
+
     <?php include('inc/footer.php') ?>

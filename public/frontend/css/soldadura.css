@@ -1,0 +1,601 @@
+/* ==========================================================================
+PÁGINA: SOLDADURA INDUSTRIAL - HERO BANNER
+========================================================================== */
+
+/* Contenedor Principal del Hero */
+.hero-soldadura-industrial {
+    position: relative;
+    min-height: 550px;
+    display: flex;
+    align-items: center;
+    /* Solo el gradiente, SIN la imagen */
+    background: linear-gradient(
+        90deg, 
+        rgba(14, 46, 91, 0.75) 0%, 
+        rgba(14, 46, 91, 0.55) 40%, 
+        rgba(14, 46, 91, 0.25) 70%, 
+        rgba(14, 46, 91, 0.1) 100%
+    );
+}
+
+/* Título Principal */
+.hero-title-soldadura {
+    font-family: 'Open Sauce', sans-serif !important;
+    font-size: 3.2rem;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+/* Texto Destacado en Cyan */
+.hero-title-soldadura .text-highlight {
+    color: #00A4C5;
+}
+
+/* Subtítulo con Línea Vertical */
+.hero-subtitle {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    max-width: 700px;
+    border-left: 4px solid #00A4C5;
+    padding-left: 20px;
+}
+
+/* Botón Cotizar Servicio */
+.btn-cotizar-soldadura {
+    background-color: #00A4C5;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 164, 197, 0.3);
+}
+
+.btn-cotizar-soldadura:hover {
+    background-color: #008ba7;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 164, 197, 0.4);
+    color: #ffffff !important;
+}
+
+/* ==========================================================================
+RESPONSIVE - TABLETS
+========================================================================== */
+@media (max-width: 991px) {
+    .hero-soldadura-industrial {
+        min-height: 450px;
+    }
+    
+    .hero-title-soldadura {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+}
+
+/* ==========================================================================
+RESPONSIVE - MÓVILES
+========================================================================== */
+@media (max-width: 576px) {
+    .hero-soldadura-industrial {
+        min-height: 400px;
+        padding: 3rem 0;
+    }
+    
+    .hero-title-soldadura {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+        border-left-width: 3px;
+        padding-left: 15px;
+    }
+    
+    .btn-cotizar-soldadura {
+        font-size: 1rem;
+        padding: 0.75rem 1.5rem !important;
+    }
+}
+
+/* ==========================================================================
+SECCIÓN: PILARES DEL SERVICIO
+========================================================================== */
+
+/* Contenedor principal de la sección */
+.pilares-servicio-section {
+    background-color: #ffffff;
+    position: relative;
+    overflow: hidden;
+    /* Imagen de fondo con las flechas */
+    background-image: url('../images/servicios/pilares-bg-arrows.png');
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 45% auto;
+}
+
+/* Aumentar opacidad temporalmente para ver si carga */
+.pilares-servicio-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 45%;
+    height: 100%;
+    background-image: url('../images/servicios/pilares-bg-arrows.png');
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: contain;
+    opacity: 0.15;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Imagen de fondo decorativa (flechas) - Cargada desde PHP */
+.pilares-bg-arrows {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 45%;
+    height: auto;
+    max-height: 100%;
+    object-fit: contain;
+    opacity: 0.15; /* Aumenté de 0.12 a 0.15 */
+    z-index: 0;
+    pointer-events: none;
+    display: block; /* Agregado */
+}
+
+/* Título "Pilares del servicio" */
+.pilares-title {
+    font-family: var(--font-titles) !important;
+    font-weight: 600 !important;
+    font-size: 2.8rem;
+    line-height: 1.2;
+    color: #0E2E5B;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Línea divisoria debajo del título */
+.pilares-line {
+    width: 60px;
+    height: 3px;
+    background-color: #0E2E5B;
+    margin-top: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Imagen de las cápsulas apiladas */
+.pilares-image {
+    max-width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: contain;
+    position: relative;
+    z-index: 1;
+}
+
+/* Responsive para tablets */
+@media (max-width: 991px) {
+    .pilares-title {
+        font-size: 2.2rem;
+    }
+    
+    .pilares-image {
+        max-height: 400px;
+    }
+    
+    .pilares-bg-arrows {
+        width: 40%;
+        opacity: 0.10;
+    }
+}
+
+/* Responsive para móviles */
+@media (max-width: 576px) {
+    .pilares-title {
+        font-size: 1.8rem;
+    }
+    
+    .pilares-line {
+        width: 45px;
+    }
+    
+    .pilares-image {
+        max-height: 320px;
+    }
+    
+    .pilares-bg-arrows {
+        width: 100%;
+        opacity: 0.08;
+    }
+}
+
+/* ==========================================================================
+SECCIÓN: CARRUSEL DE IMÁGENES - SOLDADURA INDUSTRIAL
+========================================================================== */
+
+/* Contenedor principal de la sección */
+.carousel-soldadura-section {
+    background-color: #F6FAFD;
+    position: relative;
+    padding: 5rem 0;
+}
+
+/* Fondo decorativo con patrón de puntos cyan */
+.carousel-bg-dots {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle, #00A4C5 1.5px, transparent 1.5px);
+    background-size: 25px 25px;
+    opacity: 0.08;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Tarjeta de cada slide */
+.carousel-slide-card {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(14, 46, 91, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 0 10px;
+}
+
+.carousel-slide-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(14, 46, 91, 0.2);
+}
+
+.carousel-slide-card img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.carousel-slide-card:hover img {
+    transform: scale(1.05);
+}
+
+
+/* ==========================================================================
+SECCIÓN: CARRUSEL DE IMÁGENES - SOLDADURA INDUSTRIAL
+========================================================================== */
+
+/* Contenedor principal de la sección */
+.carousel-soldadura-section {
+    background-color: #F6FAFD;
+    position: relative;
+    padding: 5rem 0;
+}
+
+/* Fondo decorativo con patrón de puntos cyan */
+.carousel-bg-dots {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle, #00A4C5 1.5px, transparent 1.5px);
+    background-size: 25px 25px;
+    opacity: 0.08;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Tarjeta de cada slide - IMAGEN GRANDE */
+.carousel-slide-card {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(14, 46, 91, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 0 10px;
+}
+
+.carousel-slide-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(14, 46, 91, 0.2);
+}
+
+.carousel-slide-card img {
+    width: 100%;
+    height: 550px; /* Altura más grande para 1 sola imagen */
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.carousel-slide-card:hover img {
+    transform: scale(1.05);
+}
+
+/* ==========================================================================
+CUSTOMIZACIÓN DE OWL CAROUSEL - FLECHAS Y DOTS
+========================================================================== */
+
+/* Flechas de navegación laterales */
+#carouselSoldadura .owl-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    pointer-events: none;
+}
+
+#carouselSoldadura .owl-nav button {
+    pointer-events: all;
+    width: 50px;
+    height: 50px;
+    background-color: #00A4C5 !important;
+    border-radius: 50% !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 164, 197, 0.3);
+    margin: 0 !important;
+}
+
+#carouselSoldadura .owl-nav button:hover {
+    background-color: #008ba7 !important;
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 164, 197, 0.4);
+}
+
+/* Iconos de flechas dentro de los botones */
+#carouselSoldadura .owl-nav button span {
+    font-size: 24px !important;
+    color: #ffffff !important;
+    line-height: 1;
+}
+
+/* Posicionamiento de flechas */
+#carouselSoldadura .owl-nav .owl-prev {
+    position: absolute;
+    left: -25px;
+}
+
+#carouselSoldadura .owl-nav .owl-next {
+    position: absolute;
+    right: -25px;
+}
+
+/* Dots de paginación */
+#carouselSoldadura .owl-dots {
+    margin-top: 2rem !important;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+#carouselSoldadura .owl-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #b6c6dd !important;
+    transition: all 0.3s ease;
+    margin: 0 !important;
+}
+
+#carouselSoldadura .owl-dot:hover {
+    background-color: #00A4C5 !important;
+    transform: scale(1.2);
+}
+
+#carouselSoldadura .owl-dot.active {
+    background-color: #00A4C5 !important;
+    width: 30px;
+    border-radius: 6px;
+}
+
+/* ==========================================================================
+RESPONSIVE - TABLETS
+========================================================================== */
+@media (max-width: 991px) {
+    .carousel-slide-card img {
+        height: 450px;
+    }
+    
+    #carouselSoldadura .owl-nav .owl-prev {
+        left: 10px;
+    }
+    
+    #carouselSoldadura .owl-nav .owl-next {
+        right: 10px;
+    }
+}
+
+/* ==========================================================================
+RESPONSIVE - MÓVILES
+========================================================================== */
+@media (max-width: 576px) {
+    .carousel-soldadura-section {
+        padding: 3rem 0;
+    }
+    
+    .carousel-slide-card img {
+        height: 350px;
+    }
+    
+    .carousel-slide-card {
+        margin: 0 5px;
+        border-radius: 15px;
+    }
+    
+    #carouselSoldadura .owl-nav button {
+        width: 40px;
+        height: 40px;
+    }
+    
+    #carouselSoldadura .owl-nav button span {
+        font-size: 18px !important;
+    }
+    
+    #carouselSoldadura .owl-nav .owl-prev {
+        left: 5px;
+    }
+    
+    #carouselSoldadura .owl-nav .owl-next {
+        right: 5px;
+    }
+}
+
+/* ==========================================================================
+SECCIÓN: SECTORES ATENDIDOS
+========================================================================== */
+
+/* Contenedor principal de la sección */
+.sectores-atendidos-section {
+    background-color: #F6FAFD;
+    position: relative;
+    padding: 5rem 0;
+}
+
+/* Fondo decorativo con patrón de puntos cyan */
+.sectores-bg-dots {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40%;
+    height: 60%;
+    background-image: radial-gradient(circle, #00A4C5 1.5px, transparent 1.5px);
+    background-size: 20px 20px;
+    opacity: 0.15;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Imagen de fondo decorativa (flechas) */
+.sectores-bg-arrows {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 45%;
+    height: auto;
+    max-height: 100%;
+    object-fit: contain;
+    opacity: 0.9;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Título "Sectores atendidos" */
+.sectores-title {
+    font-family: var(--font-titles) !important;
+    font-weight: 600 !important;
+    font-size: 2.8rem;
+    line-height: 1.2;
+    color: #0E2E5B;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Tarjeta de Sector */
+.sector-card {
+    background-color: #B8C9D9;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(14, 46, 91, 0.15);
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+    height: 100%;
+}
+
+.sector-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 45px rgba(14, 46, 91, 0.2);
+}
+
+/* Cuerpo de la tarjeta */
+.sector-card-body {
+    text-align: center;
+}
+
+/* Título de la tarjeta */
+.sector-card-title {
+    font-family: var(--font-titles) !important;
+    font-weight: 600 !important;
+    font-size: 1.5rem;
+    color: #0E2E5B;
+    margin-bottom: 1rem;
+}
+
+/* Texto de la tarjeta */
+.sector-card-text {
+    font-family: var(--font-body) !important;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #4A5568;
+    margin-bottom: 0;
+}
+
+/* ==========================================================================
+RESPONSIVE - TABLETS
+========================================================================== */
+@media (max-width: 991px) {
+    .sectores-title {
+        font-size: 2.2rem;
+    }
+    
+    .sectores-bg-arrows {
+        width: 40%;
+        opacity: 0.7;
+    }
+    
+    .sector-card-body {
+        padding: 2rem !important;
+    }
+}
+
+/* ==========================================================================
+RESPONSIVE - MÓVILES
+========================================================================== */
+@media (max-width: 576px) {
+    .sectores-atendidos-section {
+        padding: 3rem 0;
+    }
+    
+    .sectores-title {
+        font-size: 1.8rem;
+    }
+    
+    .sectores-bg-dots {
+        width: 60%;
+        height: 40%;
+    }
+    
+    .sectores-bg-arrows {
+        width: 100%;
+        opacity: 0.5;
+    }
+    
+    .sector-card {
+        border-radius: 15px;
+    }
+    
+    .sector-card-body {
+        padding: 1.5rem !important;
+    }
+    
+    .sector-card-title {
+        font-size: 1.3rem;
+    }
+    
+    .sector-card-text {
+        font-size: 0.9rem;
+    }
+}

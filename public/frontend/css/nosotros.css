@@ -1,0 +1,700 @@
+/* ==========================================================================
+SECCIÓN MISIÓN/VISIÓN - EFECTO TRANSFORMACIÓN TRACTOR
+========================================================================== */
+
+/* Patrón decorativo de puntos */
+.dot-pattern-mision {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 280px;
+  height: 280px;
+  background-image: radial-gradient(circle, #00a4c5 2px, transparent 2px);
+  background-size: 18px 18px;
+  opacity: 0.25;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ==========================================================================
+   SECCIÓN MISIÓN/VISIÓN - EFECTO TRANSFORMACIÓN TRACTOR (CORREGIDO)
+   ========================================================================== */
+
+.tractor-transform-container {
+  background-color: #ffffff !important;
+  border-radius: 18px !important;
+  box-shadow: 0 10px 40px rgba(14, 46, 91, 0.1) !important;
+  padding: 20px;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+/* Contenedor Principal del Slider */
+.before-after-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: ew-resize;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+}
+
+/* Imagen base (Fondo) */
+.after-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+}
+
+/* Imagen superior superpuesta con Absolute */
+.before-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  will-change: clip-path;
+}
+
+/* Línea divisoria vertical */
+.divider-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: #00a4c5;
+  z-index: 10;
+  transform: translateX(-50%);
+  will-change: left;
+}
+
+/* Botón flotante central de la línea */
+.divider-handle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px;
+  height: 44px;
+  background-color: #00a4c5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 164, 197, 0.4);
+  border: 3px solid #ffffff;
+  transition: transform 0.2s ease;
+}
+
+.divider-handle .fa {
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+.before-after-wrapper:hover .divider-handle {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* Etiquetas "Antes" y "Después" */
+.label-before,
+.label-after {
+  position: absolute;
+  top: 15px;
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.label-before {
+  left: 15px;
+  background-color: rgba(14, 46, 91, 0.85);
+}
+
+.label-after {
+  right: 15px;
+  background-color: rgba(0, 164, 197, 0.85);
+}
+
+.tractor-transform-hint {
+  font-size: 0.85rem;
+  color: #6c757d;
+}
+
+/* ==========================================================================
+   ANIMACIÓN AUTOMÁTICA DE BIENVENIDA (INTRO REVEAL)
+   ========================================================================== */
+@keyframes autoRevealImg {
+  0% { clip-path: inset(0 0% 0 0); }       /* 0% a 20%: Se ve solo el tractor viejo */
+  20% { clip-path: inset(0 0% 0 0); }      
+  60% { clip-path: inset(0 100% 0 0); }    /* Se desplaza y revela el tractor nuevo al 100% */
+  75% { clip-path: inset(0 100% 0 0); }    /* Pausa breve para apreciar el cambio completo */
+  100% { clip-path: inset(0 50% 0 0); }    /* Regresa y se acomoda en el centro (50%) */
+}
+
+@keyframes autoRevealDivider {
+  0% { left: 100%; }                       /* Inicia en el borde derecho */
+  20% { left: 100%; }                      
+  60% { left: 0%; }                        /* Viaja hasta el borde izquierdo (revelado total) */
+  75% { left: 0%; }                        
+  100% { left: 50%; }                      /* Se detiene en el centro */
+}
+
+/* Clases de animación aplicadas al cargar */
+.before-image.auto-animate {
+  animation: autoRevealImg 3.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.divider-line.auto-animate {
+  animation: autoRevealDivider 3.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Botón flotante central de la línea */
+.divider-handle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px;
+  height: 44px;
+  background-color: #00a4c5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 164, 197, 0.4);
+  border: 3px solid #ffffff;
+  transition: transform 0.2s ease;
+}
+
+/* Triángulos/Flechas CSS Natas (Izquierda y Derecha) */
+.divider-handle::before,
+.divider-handle::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+}
+
+/* Flecha izquierda */
+.divider-handle::before {
+  border-right: 8px solid #ffffff;
+  left: 11px;
+}
+
+/* Flecha derecha */
+.divider-handle::after {
+  border-left: 8px solid #ffffff;
+  right: 11px;
+}
+
+.before-after-wrapper:hover .divider-handle {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* ==========================================================================
+   SECCIÓN INFERIOR - PILARES INSTITUCIONALES (TEXTO + FLECHAS)
+   ========================================================================== */
+
+/* ==========================================================================
+   SECCIÓN INFERIOR - PILARES INSTITUCIONALES (CORREGIDO A TAMAÑO REAL)
+   ========================================================================== */
+
+/* Estilo del Texto Destacado */
+.pilar-brand-text {
+    color: #00a4c5 !important;
+    font-family: 'OpenOpen-Sauce-One-ExtraBold', sans-serif !important;
+    font-size: 1.45rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin: 0;
+    max-width: 95%;
+}
+
+/* Contenedor de las flechas */
+.animated-arrows-container {
+    display: flex;
+    gap: 25px; /* Mayor separación entre flechas */
+    align-items: center;
+}
+
+/* Estilo base de los vectores SVG (Flechas Robustas y Grandes) */
+.svg-block-arrow {
+    width: 115px; /* Tamaño maximizado según el mockup */
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+/* Flechas con Borde Grueso */
+.svg-block-arrow.arrow-outline {
+    fill: transparent;
+    stroke: #00a4c5;
+    stroke-width: 5; /* Línea más gruesa y visible */
+    stroke-linejoin: round;
+    stroke-linecap: round;
+}
+
+/* Flecha Rellena Central */
+.svg-block-arrow.arrow-filled {
+    fill: #00a4c5;
+    stroke: #00a4c5;
+    stroke-width: 5;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+}
+
+/* ==========================================================================
+   ANIMACIÓN SECUENCIAL DE LAS FLECHAS
+   ========================================================================== */
+@keyframes arrowSequence {
+    0%, 100% {
+        opacity: 0.35;
+        transform: scale(0.96);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.04);
+    }
+}
+
+.animated-arrows-container .arrow-1 {
+    animation: arrowSequence 1.8s infinite ease-in-out;
+}
+
+.animated-arrows-container .arrow-2 {
+    animation: arrowSequence 1.8s infinite ease-in-out;
+    animation-delay: 0.3s;
+}
+
+.animated-arrows-container .arrow-3 {
+    animation: arrowSequence 1.8s infinite ease-in-out;
+    animation-delay: 0.6s;
+}
+
+/* Efecto Hover */
+.animated-arrows-container:hover .svg-block-arrow {
+    filter: drop-shadow(0 6px 12px rgba(0, 164, 197, 0.25));
+}
+
+/* Ajustes para Dispositivos Móviles (Responsivo) */
+@media (max-width: 991px) {
+    .pilar-brand-text {
+        font-size: 1.25rem;
+        max-width: 100%;
+        text-align: center;
+    }
+    .animated-arrows-container {
+        justify-content: center;
+        width: 100%;
+        gap: 15px;
+    }
+    .svg-block-arrow {
+        width: 75px; /* Escala proporcional en móviles para no desbordar */
+    }
+}
+
+/* ==========================================================================
+   SECCIÓN: NUESTRO EQUIPO DE TRABAJO (ESTILOS Y DETALLES)
+   ========================================================================== */
+/* ==========================================================================
+   SECCIÓN: NUESTRO EQUIPO DE TRABAJO (CORRECCIÓN EDGE-TO-EDGE)
+   ========================================================================== */
+
+.team-section {
+    background-color: #f8fafc;
+    overflow: hidden;
+    width: 100%;
+    padding: 0 !important; /* Eliminamos cualquier padding que achique la sección */
+    margin: 0 !important;
+}
+
+/* Patrón de puntos vertical (fluye detrás de la foto y su transparencia) */
+.dot-pattern-team {
+    position: absolute;
+    top: -80px;
+    left: 0;
+    width: 150px;
+    height: calc(100% + 120px);
+    background-image: radial-gradient(circle, #00a4c5 2px, transparent 2px);
+    background-size: 18px 18px;
+    opacity: 0.22;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Contenedor de la foto estirado al 100% */
+.team-image-wrapper {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUpTeam 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation-delay: 0.2s;
+}
+
+/* Foto del equipo adaptada de extremo a extremo */
+.team-photo-full {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0;
+    padding: 0;
+    /* Eliminamos bordes redondeados para que pegue perfecto en los bordes de pantalla */
+    border-radius: 0; 
+}
+
+/* ==========================================================================
+   ANIMACIÓN DE ENTRADA SUAVE
+   ========================================================================== */
+@keyframes fadeInUpTeam {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ajustes para pantallas ultra grandes o pequeños detalles responsivos */
+@media (max-width: 767px) {
+    .dot-pattern-team {
+        width: 80px;
+        opacity: 0.15;
+    }
+}
+
+/* ==========================================================================
+   SECCIÓN: PILARES OPERATIVOS
+   ========================================================================== */
+
+.pilares-section {
+    background-color: #f8fafc;
+    overflow: hidden;
+}
+
+/* Patrón de puntos con barrido (Fading Mask) */
+.dot-pattern-pilares {
+    position: absolute;
+    top: 5%;
+    left: 0;
+    width: 60%; /* Cubre el área del título y las primeras tarjetas */
+    height: 90%;
+    background-image: radial-gradient(circle, #00a4c5 2px, transparent 2px);
+    background-size: 18px 18px;
+    opacity: 0.25;
+    pointer-events: none;
+    z-index: 1;
+    
+    /* Máscara CSS: desvanece los puntos de izquierda a derecha de forma nativa */
+    -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1) 25%, rgba(0,0,0,0) 100%);
+    mask-image: linear-gradient(to right, rgba(0,0,0,1) 25%, rgba(0,0,0,0) 100%);
+}
+
+/* --- DISEÑO DE TIPOGRAFÍAS --- */
+
+.pilares-title-container {
+    padding-right: 15px;
+}
+
+.pilares-subtitle {
+    font-size: 2.8rem;
+    font-family: 'OpenOpen-Sauce-One-ExtraBold', sans-serif !important;
+    color: #00a4c5 !important;
+    font-weight: 700;
+    line-height: 1.1;
+    display: block;
+}
+
+.pilares-title {
+    font-size: 3.2rem;
+    font-family: 'OpenOpen-Sauce-One-ExtraBold', sans-serif !important;
+    color: #0e2e5b !important; /* Azul marino de la marca */
+    font-weight: 800;
+    line-height: 1.1;
+    margin-top: 5px;
+}
+
+/* --- DISEÑO DE TARJETAS (CARDS) --- */
+
+.pilar-card {
+    background-color: #1c6ca3; /* Azul medio de las tarjetas en la maqueta */
+    border-radius: 28px; /* Esquinas bien redondeadas */
+    padding: 3rem 2.2rem;
+    text-align: center;
+    color: #ffffff !important;
+    box-shadow: 0 15px 35px rgba(28, 108, 163, 0.18);
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                background-color 0.3s ease;
+                
+}
+
+.pilar-card:nth-child(1) { animation-delay: 0.1s; }
+.pilar-card:nth-child(2) { animation-delay: 0.2s; }
+.pilar-card:nth-child(3) { animation-delay: 0.3s; }
+.pilar-card:nth-child(4) { animation-delay: 0.4s; }
+.pilar-card:nth-child(5) { animation-delay: 0.5s }
+
+
+.pilar-card-title {
+    font-size: 1.45rem;
+    font-weight: 700;
+    margin-bottom: 1.1rem;
+    color: #ffffff !important;
+}
+
+.pilar-card-text {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    opacity: 0.92;
+    margin: 0;
+    color: #ffffff !important;
+}
+
+/* Micro-interacción premium al pasar el mouse */
+.pilar-card:hover {
+    transform: translateY(-8px);
+    background-color: #165c8c; /* Se oscurece ligeramente */
+    box-shadow: 0 20px 45px rgba(14, 46, 91, 0.25);
+}
+
+/* --- AJUSTES RESPONSIVOS --- */
+
+@media (max-width: 991px) {
+    .pilares-title-container {
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+    
+    .pilares-subtitle {
+        font-size: 2.2rem;
+    }
+    
+    .pilares-title {
+        font-size: 2.6rem;
+    }
+    
+    .pilar-card {
+        padding: 2.5rem 1.8rem;
+    }
+}
+
+@media (max-width: 575px) {
+    .dot-pattern-pilares {
+        width: 100%;
+        opacity: 0.12;
+    }
+}
+
+/* --- FIX DE ESPACIADO VERTICAL --- */
+.pilares-section .row {
+    row-gap: 35px !important; /* Fuerza una separación vertical perfecta de 35px */
+}
+
+/* Fallback absoluto para navegadores o estilos heredados */
+.pilares-section .col {
+    margin-bottom: 10px; 
+}
+
+@media (max-width: 991px) {
+    .pilares-section .row {
+        row-gap: 25px !important; /* Un poco más compacto en tablets/móviles */
+    }
+}
+
+/* ==========================================================================
+SECCIÓN: SERVICIOS ADICIONALES (CARRUSEL)
+========================================================================== */
+.servicios-adicionales-section {
+    background-color: #F6FAFD;
+    padding: 4rem 0;
+}
+
+.servicios-adicionales-section h3 {
+    font-family: 'Open Sauce', sans-serif;
+    font-weight: 600;
+    color: #0E2E5B;
+    font-size: 1.8rem;
+    margin-bottom: 2.5rem;
+}
+
+/* Tarjetas de Servicios */
+.servicio-adicional-card {
+    border-radius: 18px;
+    padding: 2rem 1.5rem;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 10px;
+}
+
+.servicio-adicional-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(14, 46, 91, 0.15);
+}
+
+/* Iconos dentro de las tarjetas */
+.servicio-adicional-card .servicio-icono {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 15px;
+    object-fit: contain;
+}
+
+/* Títulos de las tarjetas */
+.servicio-adicional-card h5 {
+    font-family: 'OpenOpen-Sauce-One-ExtraBold', sans-serif !important;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+/* Variante oscura (fondo azul marino con icono blanco) */
+.servicio-adicional-card.card-dark {
+    background-color: #0E2E5B;
+    box-shadow: 0 8px 20px rgba(14, 46, 91, 0.2);
+}
+
+.servicio-adicional-card.card-dark h5 {
+    color: #ffffff;
+}
+
+/* Variante clara (fondo blanco con borde y icono azul) */
+.servicio-adicional-card.card-light {
+    background-color: #ffffff;
+    border: 2px solid #E2E8F0;
+}
+
+.servicio-adicional-card.card-light h5 {
+    color: #0E2E5B;
+}
+
+/* Navegación del carrusel */
+.owl-servicios-adicionales .owl-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    padding: 0 10px;
+}
+
+.owl-servicios-adicionales .owl-nav button {
+    pointer-events: auto;
+    background-color: #00A4C5 !important;
+    color: #ffffff !important;
+    width: 45px;
+    height: 45px;
+    border-radius: 50% !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 164, 197, 0.3);
+    border: none !important;
+}
+
+.owl-servicios-adicionales .owl-nav button:hover {
+    background-color: #0E2E5B !important;
+    transform: scale(1.1);
+}
+
+.owl-servicios-adicionales .owl-nav .owl-prev {
+    margin-left: -20px;
+}
+
+.owl-servicios-adicionales .owl-nav .owl-next {
+    margin-right: -20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .servicio-adicional-card {
+        min-height: 200px;
+        padding: 1.5rem 1rem;
+    }
+    
+    .servicio-adicional-card .servicio-icono {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .servicio-adicional-card h5 {
+        font-size: 1rem;
+    }
+}
+
+/* ==========================================================================
+BADGES DE MISIÓN Y VISIÓN - CON ICONO PNG
+========================================================================== */
+.badge-mision-vision {
+    display: inline-flex !important;
+    align-items: center;
+    padding: 12px 28px !important;
+    border: 2.5px solid #b6c6dd;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 50px;
+    gap: 14px;
+    transition: all 0.3s ease;
+}
+
+.badge-mision-vision:hover {
+    border-color: #00A4C5;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 12px rgba(0, 164, 197, 0.15);
+}
+
+/* Icono de flechas PNG */
+.badge-arrow-icon {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+/* Título de Misión/Visión */
+.badge-mision-vision-title {
+    font-family: 'Open Sauce', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 2.2rem !important;
+    color: #1a3a6b !important;
+    letter-spacing: -0.5px;
+    line-height: 1;
+}
+
+/* Responsive para móviles */
+@media (max-width: 576px) {
+    .badge-mision-vision {
+        padding: 10px 24px !important;
+        gap: 12px;
+    }
+    
+    .badge-arrow-icon {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .badge-mision-vision-title {
+        font-size: 1.6rem !important;
+    }
+}

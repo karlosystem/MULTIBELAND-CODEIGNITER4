@@ -1,0 +1,386 @@
+/* ==========================================================================
+SECCIÓN TRANSFORMACIÓN Y TAPIZADO DE CABINAS
+========================================================================== */
+
+.seccion-cabinas-showcase {
+  background-color: #f6f8fb;
+}
+
+/* Columna Izquierda: Imagen PNG */
+.circular-img-wrapper {
+  max-width: 460px;
+  margin: 0 auto;
+}
+
+.drop-shadow-custom {
+  filter: drop-shadow(-10px 10px 20px rgba(14, 46, 91, 0.08));
+}
+
+/* Columna Derecha: Tarjeta */
+.showcase-card-container {
+  z-index: 2;
+}
+
+/* Fondo Decorativo de Puntos */
+.dots-pattern-bg {
+  position: absolute;
+  bottom: -20px;
+  right: -25px;
+  width: 180px;
+  height: 130px;
+  background-image: radial-gradient(#0e2e5b 22%, transparent 22%);
+  background-size: 13px 13px;
+  opacity: 0.18;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Slider de Imagen */
+.slider-image-wrapper {
+  max-height: 280px;
+  border-radius: 18px;
+  z-index: 1;
+}
+
+.slider-image-inner img {
+  height: 270px;
+  object-fit: cover;
+  border-radius: 18px;
+  transition: opacity 0.3s ease;
+}
+
+/* Botones de Navegación */
+.slider-nav-buttons {
+  position: absolute;
+  bottom: -18px;
+  left: 20px;
+  z-index: 3;
+}
+
+.btn-slider-nav {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 0.85rem;
+  transition: transform 0.2s ease;
+}
+
+.btn-slider-nav:hover {
+  transform: scale(1.1);
+}
+
+.btn-cyan {
+  background-color: #00a4c5;
+}
+
+.btn-navy {
+  background-color: #0e2e5b;
+}
+
+/* --- ENCABEZADO Y BARRA CYAN --- */
+.service-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+
+/* Barra cyan vertical con espacio lateral a la derecha */
+.header-line-cyan {
+  display: inline-block;
+  width: 4px;
+  height: 22px;
+  background-color: #00b8e6 !important;
+  border-radius: 4px;
+  margin-right: 12px !important; /* <--- ESPACIO ENTRE BARRA Y TITULO "01." */
+  flex-shrink: 0;
+}
+
+.service-tab-title {
+  color: #032552 !important;
+  font-size: 1.35rem !important;
+  font-weight: 700 !important;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif !important;
+  margin: 0 !important;
+}
+
+.service-tab-subtitle {
+  color: #2181ad !important;
+  font-size: 0.95rem !important;
+  line-height: 1.5 !important;
+  font-weight: 400 !important;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif !important;
+  margin-bottom: 1.25rem !important;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #edf2f7;
+}
+
+/* --- LISTA DE ÍTEMS CON ÍCONO CIRCULAR Y MARGEN LATERAL --- */
+.features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem; /* Espacio vertical entre ítems */
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+}
+
+/* Caja circular del ícono */
+.feature-icon-box {
+  width: 42px !important;
+  height: 42px !important;
+  min-width: 42px !important; /* Evita que el círculo se aplaste */
+  background-color: #e4f4f7 !important; /* Celeste claro pastel del boceto */
+  color: #00a8cc !important; /* Color del icono */
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 1.1rem !important;
+  margin-right: 16px !important; /* <--- MARGEN LATERAL ENTRE ÍCONO Y TEXTO */
+}
+
+.feature-content {
+  flex: 1;
+}
+
+/* Título de cada ítem (Tapizado premium, etc.) */
+.feature-title {
+  color: #032552 !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif !important;
+  margin-top: 2px !important;
+  margin-bottom: 3px !important;
+}
+
+.feature-text {
+  color: #2181ad !important;
+  font-size: 0.88rem !important;
+  line-height: 1.45 !important;
+  font-weight: 400 !important;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif !important;
+  margin: 0 !important;
+}
+
+/* Adaptación Móvil */
+@media (max-width: 991px) {
+  .circular-img-wrapper {
+    max-width: 360px;
+  }
+  .dots-pattern-bg {
+    display: none;
+  }
+  .showcase-card-container {
+    margin-top: 2rem;
+  }
+}
+
+
+/* --- SECCIÓN COVERS --- */
+.covers-section {
+  background-color: #f2f7fb; /* Fondo azul pastel claro del boceto */
+}
+
+.skewed-image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.skewed-image-wrapper {
+  width: 100%;
+  max-width: 500px;
+  height: 460px;
+  transform: skewX(-12deg);
+  border-radius: 32px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(3, 37, 82, 0.07);
+  background-color: #e2eef7;
+}
+
+/* La imagen mantiene 100% su relación de aspecto original */
+.cover-img-skewed {
+    width: 100%;
+    height: auto !important; /* Mantiene la proporción real sin estirar */
+    max-width: 100%;
+    object-fit: contain;
+    /* Sombra suave que bordea el PNG en diagonal */
+    filter: drop-shadow(0px 10px 20px rgba(3, 37, 82, 0.12));
+}
+
+.cover-img-skewed:hover {
+    transform: scale(1.01);
+}
+
+/* --- TIPOGRAFÍA Y TEXTOS --- */
+.covers-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  font-family: "Open-Sauce-One-ExtraBold", sans-serif !important;
+  line-height: 1.25;
+}
+
+.covers-description {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  font-family: "Open-Sauce-One-ExtraBold", sans-serif !important;
+}
+
+/* --- TARJETAS TIPO ACORDEÓN --- */
+.covers-accordion {
+  width: 100%;
+}
+
+.cover-card {
+  background: #ffffff;
+  margin-bottom: 12px;
+  border-radius: 30px; /* Borde completamente redondeado estilo pastilla */
+  padding: 16px 26px;
+  box-shadow: 0 4px 15px rgba(3, 37, 82, 0.04);
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+  border: 1px solid transparent;
+  height: auto !important; /* Evita que las tarjetas colapsadas se estiren */
+}
+
+.cover-card-title {
+  color: #002855 !important;
+  font-size: 1.05rem;
+  font-weight: 700;
+  font-family: "Open-Sauce-One-ExtraBold", sans-serif !important;
+}
+
+/* Contenido colapsable */
+.cover-card-body {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition:
+    max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.3s ease,
+    margin-top 0.3s ease;
+}
+
+.cover-card-body p {
+  font-size: 0.93rem;
+  line-height: 1.5;
+  font-family: "Open-Sauce-One-ExtraBold", sans-serif !important;
+}
+
+/* --- ESTADO ACTIVO --- */
+.cover-card.active {
+  box-shadow: 0 8px 25px rgba(3, 37, 82, 0.09);
+}
+
+.cover-card.active .cover-card-body {
+  max-height: 150px; /* Permite desplegar el contenido */
+  opacity: 1;
+  margin-top: 8px; /* Espaciado con el título solo cuando está activo */
+}
+
+
+/* --- SECCIÓN BENEFICIOS OPERATIVOS --- */
+.beneficios-section {
+    background-color: #f2f7fb;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Imagen de las flechas a la izquierda */
+.flechas-bg-img {
+    position: absolute;
+    left: -10px; /* Alineada al borde izquierdo */
+    top: 50%;
+    transform: translateY(-50%);
+    max-height: 115%; /* Ajusta el tamaño de las flechas proporcionalmente */
+    width: auto;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Tarjeta Principal de Beneficios */
+.beneficios-card {
+    position: relative;
+    z-index: 2;
+    background: linear-gradient(135deg, #d3e2ef 0%, #c5d7e6 100%);
+    border-radius: 28px;
+    padding: 45px 40px;
+    box-shadow: 0 15px 35px rgba(3, 37, 82, 0.12);
+
+    /* --- CAMBIOS CLAVE PARA REVELAR LAS FLECHAS --- */
+    width: 82%;          /* Reduce el ancho para dejar espacio a la izquierda */
+    margin-left: auto;   /* Empuja la tarjeta totalmente a la derecha */
+}
+
+/* Ajustes de espaciado interno */
+.beneficios-title {
+    color: #002855;
+    font-size: 2.4rem;
+    font-weight: 800;
+    line-height: 1.15;
+    font-family: "Open-Sauce-One-ExtraBold", sans-serif !important;
+}
+
+.beneficio-icon-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 55px;
+}
+
+.beneficio-icon {
+    max-height: 52px;
+    width: auto;
+    object-fit: contain;
+}
+
+.beneficio-item-title {
+    color: #002855;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.25;
+    font-family: "Open-Sauce-One-ExtraBold", sans-serif !important;
+}
+
+.beneficio-item-text {
+    color: #1e3a5f;
+    font-size: 0.88rem;
+    line-height: 1.4;
+    font-family: "Open-Sauce-One-ExtraBold", sans-serif !important;
+}
+
+/* --- RESPONSIVO (Móviles y Tablets) --- */
+@media (max-width: 991.98px) {
+    .beneficios-card {
+        width: 100%;       /* En móviles vuelve al 100% */
+        margin-left: 0;
+        padding: 35px 20px;
+        text-align: center;
+    }
+
+    .flechas-bg-img {
+        display: none;     /* Se oculta en móviles para mantener la limpieza */
+    }
+}

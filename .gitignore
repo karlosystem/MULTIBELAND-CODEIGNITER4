@@ -52,3 +52,35 @@
 .idea/
 Thumbs.db
 .DS_Store
+
+#-------------------------------------------------------------------
+# ARCHIVOS DE TRABAJO Y RECURSOS NO NECESARIOS PARA EL CÓDIGO
+#-------------------------------------------------------------------
+
+# Archivos comprimidos
+*.zip
+*.rar
+*.7z
+
+# Videos de trabajo
+*.mp4
+*.avi
+*.mov
+
+# Documentos de trabajo
+*.doc
+*.docx
+*.odt
+*.pdf
+
+# Carpetas auxiliares y material de trabajo
+/servicios a subir/
+/archivos/
+/imágenes de NOSOTROS/
+/Logos-aliados/
+/Raleway/
+/Open-Sauce-One-SemiBold/
+/transformer.org-20260706-212112/
+
+# Archivos temporales de Windows
+~$*

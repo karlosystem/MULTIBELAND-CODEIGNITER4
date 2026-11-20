@@ -9,6 +9,13 @@ use App\Controllers\CmsController;
 use App\Controllers\ContactenosController;
 use App\Controllers\SettingController;
 use App\Controllers\SubCategoriasController;
+use App\Controllers\CoberturaController;
+use App\Controllers\BlogController;
+use App\Controllers\PinturaIndustrialController;
+use App\Controllers\TapiceriaIndustrialController;
+use App\Controllers\SoldaduraIndustrialController;
+use App\Controllers\VidrieriaIndustrialController;
+use App\Controllers\RestauracionCabinasController;
 
 $routes = Services::routes();
 
@@ -27,8 +34,16 @@ $routes->get('galeria', 'CmsController::galeria', ['as'=>'galeria']);
 $routes->get('clientes', 'CmsController::clientes', ['as'=>'clientes']);
 $routes->get('servicios', 'CmsController::servicios', ['as'=>'servicios']);
 $routes->get('nosotros', 'CmsController::nosotros', ['as'=>'nosotros']);
+$routes->get('cobertura', 'CoberturaController::index', ['as'=>'cobertura']);
+$routes->get('blog', 'BlogController::index', ['as'=>'blog']);
+$routes->get('pintura-industrial', 'PinturaIndustrialController::index', ['as'=>'pintura-industrial']);
+$routes->get('tapiceria-industrial', 'TapiceriaIndustrialController::index', ['as'=>'tapiceria-industrial']);
+$routes->get('soldadura-industrial', 'SoldaduraIndustrialController::index', ['as'=>'soldadura-industrial']);
+$routes->get('vidrieria-industrial', 'VidrieriaIndustrialController::index', ['as'=>'vidrieria-industrial']);
+$routes->get('restauracion-cabinas', 'RestauracionCabinasController::index', ['as'=>'restauracion-cabinas']);
 
-$routes->group('admin', static function($routes){
+
+ $routes->group('admin', static function($routes){
     $routes->group('', ['filter'=>'cifilter:auth'], static function ($routes){
         
         //admin
